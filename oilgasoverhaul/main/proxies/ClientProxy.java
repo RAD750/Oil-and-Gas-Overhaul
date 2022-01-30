@@ -31,6 +31,7 @@ public class ClientProxy extends CommonProxy {
 		super.init(event);
 		MinecraftForgeClient.preloadTexture("/oilgasoverhaul/textures/cells.png");
 		MinecraftForgeClient.preloadTexture("/oilgasoverhaul/textures/liquids.png");
+		MinecraftForgeClient.preloadTexture("/oilgasoverhaul/textures/blocks.png");
 
 		/*
 		 * Texture FX per i liquidi

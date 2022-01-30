@@ -10,6 +10,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.src.BaseMod;
 import net.minecraftforge.liquids.LiquidContainerRegistry;
 import net.minecraftforge.liquids.LiquidDictionary;
@@ -50,13 +51,13 @@ public class Main extends BaseMod{
 		Blocks.initBlocks();
 		Blocks.registerBlocks();
 		Blocks.initLanguageRegistry();
-		Localization.initLocalization();
 	}
 	
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {
 		CraftingHandler.initCrafting();
 		OreDictionaryHandler.initOreDictionary();
+		GameRegistry.registerFuelHandler(new oilgasoverhaul.main.handlers.FuelHandler());
 	    proxy.postInit(event);
 	}
 }

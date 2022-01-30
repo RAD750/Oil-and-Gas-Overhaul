@@ -126,6 +126,12 @@ public class CraftingHandler {
 		asphalt.stackSize = 1;
 		gravel.stackSize = 32;
 		GregtechCompat.addAlloySmelterRecipe(gravel, asphalt, asphaltBlock, 500, 40);
+	
+		//AlCl3
 		
+		ItemStack aluminiumDust = GregtechCompat.getGregTechItem(1, 0, 18);
+		ItemStack chlorine = GregtechCompat.getGregTechItem(2, 3, 13);
+		ItemStack aluminiumChloride = new ItemStack(Items.AlCl3);
+		GregtechCompat.addChemicalRecipe(aluminiumDust, chlorine, aluminiumChloride, 400);
 	}
 }

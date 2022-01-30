@@ -10,7 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import oilgasoverhaul.main.CreativeTab;
 
-public class ItemFuel extends Item implements IFuelHandler {
+public class ItemFuel extends Item {
 
 	private String type;
 	private String composition;
@@ -45,11 +45,6 @@ public class ItemFuel extends Item implements IFuelHandler {
 			toolTip.add("\247bComposition: \247e" + composition);
 		}
 		toolTip.add("\2477\247oSolid");
-	}
-	
-	@Override
-	public int getBurnTime(ItemStack fuel) {
-		return heatValue;
 	}
 
 }
