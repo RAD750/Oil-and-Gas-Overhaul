@@ -16,6 +16,8 @@ import net.minecraftforge.liquids.LiquidContainerRegistry;
 import net.minecraftforge.liquids.LiquidDictionary;
 import oilgasoverhaul.main.blocks.Blocks;
 import oilgasoverhaul.main.handlers.CraftingHandler;
+import oilgasoverhaul.main.handlers.GeneratorHandler;
+import oilgasoverhaul.main.handlers.MinablesHandler;
 import oilgasoverhaul.main.handlers.OreDictionaryHandler;
 import oilgasoverhaul.main.items.Items;
 import oilgasoverhaul.main.proxies.CommonProxy;
@@ -58,6 +60,8 @@ public class Main extends BaseMod{
 		CraftingHandler.initCrafting();
 		OreDictionaryHandler.initOreDictionary();
 		GameRegistry.registerFuelHandler(new oilgasoverhaul.main.handlers.FuelHandler());
+		GeneratorHandler.addGeneratorFuels();
+		MinablesHandler.addMinables();
 	    proxy.postInit(event);
 	}
 }

@@ -280,5 +280,20 @@ public class GregtechCompat {
 		return false;
 	}
 
+	/**
+	 * Adds a Fuel for My Generators
+	 * @param aInput1 must be != null
+	 * @param aOutput1 can be null
+	 * @param aEU EU per MilliBucket. If no Liquid Form of this Container is available, then it will give you EU*1000 per Item.
+	 * @param aType 0 = Diesel; 1 = Gas Turbine; 2 = Thermal; 3 = DenseFluid; 4 = Plasma; 5 = Magic; And if something is unclear or missing, then look at the GT_Recipe-Class
+	 */
+	public static boolean addFuel(ItemStack aInput1, ItemStack aOutput1, int aEU, int aType) {
+		try {
+			Class.forName("gregtechmod.GT_Mod").getMethod("addFuel", ItemStack.class, ItemStack.class, int.class, int.class).invoke(null, aInput1, aOutput1, aEU, aType);
+			return true;
+		} catch (Exception e) {}
+		return false;
+	}
+
 
 }

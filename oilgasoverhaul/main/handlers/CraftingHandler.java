@@ -48,7 +48,7 @@ public class CraftingHandler {
 		distillateResidue.stackSize = 33;
 		
 		
-		GregtechCompat.addDistillationRecipe(desaltedCrude, 0, distillateReflux, naphtha, diesel, distillateResidue, 1200, 192);
+		GregtechCompat.addDistillationRecipe(desaltedCrude, 0, distillateReflux, naphtha, diesel, distillateResidue, 2800, 192);
 		
 		
 		//Distillazione (2a parte)
@@ -58,7 +58,7 @@ public class CraftingHandler {
 		ItemStack gasoline = CraftingHelpers.getOreDict("Gasoline Cell").copy();
 		gasoline.stackSize = 6;
 		
-		GregtechCompat.addDistillationRecipe(distillateReflux, 0, lpg, gasoline, null, null, 600, 96);
+		GregtechCompat.addDistillationRecipe(distillateReflux, 0, lpg, gasoline, null, null, 1600, 96);
 		
 		//Distillazione (3a parte)
 		
@@ -101,10 +101,16 @@ public class CraftingHandler {
 		ic2.api.Ic2Recipes.addCompressorRecipe(woodPulp, woodPellet);
 		
 		//Planks -> Chips (e pulp)
-		ItemStack planks = new ItemStack(Block.planks);
+		ItemStack planks = new ItemStack(Block.planks, 1, 0);
 		ItemStack woodChips = new ItemStack(Items.woodChips);
 		woodChips.stackSize = 4;
 		woodPulp.stackSize = 1;
+		GregtechCompat.addSawmillRecipe(planks, 0, woodChips, woodPulp, null);
+		planks = new ItemStack(Block.planks, 1, 1);
+		GregtechCompat.addSawmillRecipe(planks, 0, woodChips, woodPulp, null);
+		planks = new ItemStack(Block.planks, 1, 2);
+		GregtechCompat.addSawmillRecipe(planks, 0, woodChips, woodPulp, null);
+		planks = new ItemStack(Block.planks, 1, 3);
 		GregtechCompat.addSawmillRecipe(planks, 0, woodChips, woodPulp, null);
 		
 		//Chips -> Pulp
@@ -133,5 +139,27 @@ public class CraftingHandler {
 		ItemStack chlorine = GregtechCompat.getGregTechItem(2, 3, 13);
 		ItemStack aluminiumChloride = new ItemStack(Items.AlCl3);
 		GregtechCompat.addChemicalRecipe(aluminiumDust, chlorine, aluminiumChloride, 400);
+		
+		
+		//Benzina in tanica
+		ItemStack cell = ic2.api.Items.getItem("cell").copy();
+		ItemStack filledCanister = ic2.api.Items.getItem("filledFuelCan");
+		ItemStack emptyCanister = ic2.api.Items.getItem("fuelCan");
+		gasoline.stackSize = 4;
+		cell.stackSize = 4;
+		
+		GregtechCompat.addCannerRecipe(gasoline, emptyCanister, filledCanister, cell, 100, 2);
+		
+		//Miscela (solo con EnhGeology)
+		
+		ItemStack fuelMixture = CraftingHelpers.getOreDict("canisterFuelMixture");
+		mineralOil.stackSize = 1;
+		cell.stackSize = 1;
+		
+		if (fuelMixture != null) {
+			GregtechCompat.addCannerRecipe(filledCanister, mineralOil, fuelMixture, cell, 100, 1);
+		} else {
+			Main.oilgasLog.warning("Cannot find Enhanced Geology, fuel mixture recipe disabled");
+		}
 	}
 }
