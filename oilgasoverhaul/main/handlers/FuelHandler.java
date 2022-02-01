@@ -12,8 +12,8 @@ public class FuelHandler implements IFuelHandler {
 	public int getBurnTime(ItemStack fuel) {
 		Item itemFuel = fuel.getItem();
 
-		if (itemFuel == Items.woodChips) { return 700; }
-		if (itemFuel == Items.woodPellets) { return 500; }
+		if (itemFuel == Items.woodChips) { return 250; }
+		if (itemFuel == Items.woodPellets) { return 450; }
 		if (itemFuel == Items.paraffinedWood) { return 7000; }
 		return 0;
 
