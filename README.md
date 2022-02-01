@@ -11,7 +11,7 @@ Questa mod aggiunge nuovi oggetti dell'industria del petrolio e nuovi processi p
 ### Idrocarburi
 |Nome|Stato|Uso|Boiler|Combustion Engine|Semifluid|Gas Turbine|
 |---|---|---|---|---|---|---|
-|LPG|Gas|Combustibile|134 kcal/pz|:x:|:x:|52 kWh|
+|LPG|Gas|Combustibile|134 kcal|:x:|:x:|52 kWh|
 |Gasoline|Liquido|Carburante per motori, cracking stock|:x:|35 MJ, 3 ktick|:x:|68 kWh|
 |Naphtha|Liquido|Combustibile, cracking stock|160 kcal|20 MJ, 50 ktick|:x:|76 kWh|
 |Diesel|Liquido|Combustibile|96 kcal|6 MJ, 100 ktick|:x:|:x:|
