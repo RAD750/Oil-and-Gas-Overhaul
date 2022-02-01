@@ -9,7 +9,7 @@ Questa mod aggiunge nuovi oggetti dell'industria del petrolio e nuovi processi p
 ## Oggetti
 
 ### Idrocarburi
-|Nome|Stato|Uso|Potere calorifico|Boiler|Combustion Engine|Semifluid|Gas Turbine|
+|Nome|Stato|Uso|Potere calorifico (boiler)|Boiler|Combustion Engine|Semifluid|Gas Turbine|
 |---|---|---|---|---|---|---|---|
 |LPG|Gas|Combustibile|134 kcal/bucket|:heavy_check_mark:|:x:|:x:|:heavy_check_mark:|
 |Gasoline|Liquido|Carburante per motori, cracking stock||:x:|:heavy_check_mark:|:x:|:heavy_check_mark:|
