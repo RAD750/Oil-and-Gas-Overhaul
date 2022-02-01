@@ -12,13 +12,13 @@ Questa mod aggiunge nuovi oggetti dell'industria del petrolio e nuovi processi p
 |Nome|Stato|Uso|Potere calorifico|Boiler|Combustion Engine|Semifluid|Gas Turbine|
 |---|---|---|---|---|---|---|---|
 |LPG|Gas|Combustibile|134 kcal/bucket|:heavy_check_mark:|:x:|:x:|:heavy_check_mark:|
-|Gasoline|Liquido||Carburante per motori, cracking stock|:x:|:heavy_check_mark:|:x:|:heavy_check_mark:|
+|Gasoline|Liquido| |Carburante per motori, cracking stock|:x:|:heavy_check_mark:|:x:|:heavy_check_mark:|
 |Naphtha|Liquido|160 kcal/bucket|Combustibile, cracking stock|:heavy_check_mark:|:x:|:x:|:heavy_check_mark:|
 |Diesel|Liquido|96 kcal/bucket|Combustibile|:heavy_check_mark:|:heavy_check_mark:|:x:|:x:|
 |Heavy Fuel Oil|216 kcal/bucket|Liquido|Combustibile, cracking stock|:heavy_check_mark:|:x:|:heavy_check_mark:|:x:|
-|Paraffin|Solido||Combustibile (dopo lavorazione)|:x:|:x:|:heavy_check_mark:|:x:|
-|Mineral Oil|Solido||Lubrificante, combustibile|:x:|:x:|:heavy_check_mark:|:x:|
-|Asphalt|Solido||Materiale da costruzione|:x:|:x:|:x:|:x:|
+|Paraffin|Solido| |Combustibile (dopo lavorazione)|:x:|:x:|:heavy_check_mark:|:x:|
+|Mineral Oil|Solido| |Lubrificante, combustibile|:x:|:x:|:heavy_check_mark:|:x:|
+|Asphalt|Solido| |Materiale da costruzione|:x:|:x:|:x:|:x:|
 
 ### Catalizzatori
 |Nome|Formula|Uso|Processo|
