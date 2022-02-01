@@ -9,16 +9,16 @@ Questa mod aggiunge nuovi oggetti dell'industria del petrolio e nuovi processi p
 ## Oggetti
 
 ### Idrocarburi
-|Nome|Stato|Uso|Potere calorifico (boiler)|Boiler|Combustion Engine|Semifluid|Gas Turbine|
-|---|---|---|---|---|---|---|---|
-|LPG|Gas|Combustibile|134 kcal/bucket|:heavy_check_mark:|:x:|:x:|:heavy_check_mark:|
-|Gasoline|Liquido|Carburante per motori, cracking stock||:x:|:heavy_check_mark:|:x:|:heavy_check_mark:|
-|Naphtha|Liquido|Combustibile, cracking stock|160 kcal/bucket|:heavy_check_mark:|:x:|:x:|:heavy_check_mark:|
-|Diesel|Liquido|Combustibile|96 kcal/bucket|:heavy_check_mark:|:heavy_check_mark:|:x:|:x:|
-|Heavy Fuel Oil|Liquido|Combustibile, cracking stock|216 kcal/bucket|:heavy_check_mark:|:x:|:heavy_check_mark:|:x:|
-|Paraffin|Solido|Combustibile (dopo lavorazione)||:x:|:x:|:heavy_check_mark:|:x:|
-|Mineral Oil|Solido|Lubrificante, combustibile||:x:|:x:|:heavy_check_mark:|:x:|
-|Asphalt|Solido|Materiale da costruzione||:x:|:x:|:x:|:x:|
+|Nome|Stato|Uso|Boiler|Combustion Engine|Semifluid|Gas Turbine|
+|---|---|---|---|---|---|---|
+|LPG|Gas|Combustibile|:heavy_check_mark: 134 kcal/pz|:x:|:x:|:heavy_check_mark: 52 kWh|
+|Gasoline|Liquido|Carburante per motori, cracking stock|:x:|:heavy_check_mark: 35 MJ, 3 ktick|:x:|:heavy_check_mark: 68 kWh|
+|Naphtha|Liquido|Combustibile, cracking stock|:heavy_check_mark: 160 kcal|:heavy_check_mark: 20 MJ, 50 ktick|:x:|:heavy_check_mark: 76 kWh|
+|Diesel|Liquido|Combustibile|:heavy_check_mark: 96 kcal|:heavy_check_mark: 6 MJ, 100 ktick|:x:|:x:|
+|Heavy Fuel Oil|Liquido|Combustibile, cracking stock|:heavy_check_mark: 216 kcal|:x:|:heavy_check_mark: 82 kWh|:x:|
+|Paraffin|Solido|Combustibile (dopo lavorazione)|:x:|:x:|:heavy_check_mark: 84 kWh|:x:|
+|Mineral Oil|Solido|Lubrificante, combustibile|:x:|:x:|:heavy_check_mark: 83 kWh|:x:|
+|Asphalt|Solido|Materiale da costruzione|:x:|:x:|:x:|:x:|
 
 ### Catalizzatori
 |Nome|Formula|Uso|Processo|
