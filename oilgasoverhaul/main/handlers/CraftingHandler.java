@@ -166,7 +166,7 @@ public class CraftingHandler {
 		ItemStack gasoline3x = gasoline.copy();
 		gasoline.stackSize = 2;
 		gasoline3x.stackSize = 3;
-		GregtechCompat.addChemicalRecipe(gasoline, emptyCanister, gasoline3x, 0);
+		GregtechCompat.addChemicalRecipe(gasoline, condensate, gasoline3x, 0);
 		
 		//Valvola - machine.beta.tank.iron.valve
 		ItemStack valve = railcraft.common.api.core.items.ItemRegistry.getItem("machine.beta.tank.iron.valve", 1);
