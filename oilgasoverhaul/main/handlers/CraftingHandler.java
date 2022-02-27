@@ -161,5 +161,30 @@ public class CraftingHandler {
 		} else {
 			Main.oilgasLog.warning("Cannot find Enhanced Geology, fuel mixture recipe disabled");
 		}
+		
+		ItemStack condensate = CraftingHelpers.getOreDict("Condensate Cell").copy();
+		ItemStack gasoline3x = gasoline.copy();
+		gasoline.stackSize = 2;
+		gasoline3x.stackSize = 3;
+		GregtechCompat.addChemicalRecipe(gasoline, emptyCanister, gasoline3x, 0);
+		
+		//Valvola - machine.beta.tank.iron.valve
+		ItemStack valve = railcraft.common.api.core.items.ItemRegistry.getItem("machine.beta.tank.iron.valve", 1);
+		
+		//Tank - machine.beta.tank.iron.wall
+		ItemStack tank = railcraft.common.api.core.items.ItemRegistry.getItem("machine.beta.tank.iron.wall", 1);
+		
+		//Turbocompressor - part.turbocompressor
+		ItemStack turbopump = railcraft.common.api.core.items.ItemRegistry.getItem("part.turbocompressor", 1);
+		
+		//diesel pump - part.dieselPump
+		ItemStack dieselpump = railcraft.common.api.core.items.ItemRegistry.getItem("part.dieselpump", 1);
+				
+		//mining pipe
+		ItemStack pipe = ic2.api.Items.getItem("miningPipe");
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.wellHead, 1), new Object[] {
+				"PVG", "VTV", "DVD", 'P', pipe, 'V', valve, 'G', turbopump, 'T', tank, 'D', dieselpump
+		});		
 	}
 }

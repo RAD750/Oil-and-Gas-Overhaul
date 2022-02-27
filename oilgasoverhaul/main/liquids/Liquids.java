@@ -39,5 +39,10 @@ public class Liquids {
 		
 		// Lubricant	
 		LiquidHelper.addLiquid("Mineral Oil", 3810, 10, 21510, 10, "Vacuum Distillate", null, "Liquid");
+		
+		//Condensate (Drip Gas)
+		LiquidHelper.addLiquid("Condensate", 3811, 11, 21511, 11, "Mixture", "Light Hydrocarbons", "Liquid");
+	
+		
 	}
 }

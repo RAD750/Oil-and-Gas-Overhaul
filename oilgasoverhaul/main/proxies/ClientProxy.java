@@ -12,6 +12,8 @@ import net.minecraftforge.client.MinecraftForgeClient;
 import oilgasoverhaul.main.Main;
 import oilgasoverhaul.main.handlers.TextureFXHelper;
 import oilgasoverhaul.main.handlers.TextureLiquidsFX;
+import oilgasoverhaul.main.solid.rendertables.RenderTableWellhead;
+import oilgasoverhaul.main.tileentities.TileEntityWellhead;
 
 public class ClientProxy extends CommonProxy {
 	public ClientProxy() {
@@ -32,6 +34,7 @@ public class ClientProxy extends CommonProxy {
 		MinecraftForgeClient.preloadTexture("/oilgasoverhaul/textures/cells.png");
 		MinecraftForgeClient.preloadTexture("/oilgasoverhaul/textures/liquids.png");
 		MinecraftForgeClient.preloadTexture("/oilgasoverhaul/textures/blocks.png");
+		MinecraftForgeClient.preloadTexture("/oilgasoverhaul/textures/items.png");
 
 		/*
 		 * Texture FX per i liquidi
@@ -57,6 +60,14 @@ public class ClientProxy extends CommonProxy {
 		TextureFXHelper.defineTextureFX(70, 75, 70, 75, 70, 75, 9);
 		// Min. oil (10)
 		TextureFXHelper.defineTextureFX(90, 95, 40, 45, 115, 200, 10);
+		// Condensate (11)
+		TextureFXHelper.defineTextureFX(140, 145, 185, 190, 193, 198, 11);
+		
+		/*
+		 * Modeli 3D
+		 */
+		
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWellhead.class, new RenderTableWellhead());
 	}
 
 	@Mod.PostInit

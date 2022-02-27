@@ -27,7 +27,7 @@ public class CreativeTab extends CreativeTabs {
 	@SideOnly(Side.CLIENT) 
 	public ItemStack getIconItemStack() {
 		if(this.name == tabOGOMain.getTabLabel()) {
-			return new ItemStack(Blocks.asphalt);
+			return new ItemStack(Blocks.wellHead);
 		}
 		return null;
 	}
