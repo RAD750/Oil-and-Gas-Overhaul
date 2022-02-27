@@ -6,6 +6,21 @@ KYAAAAA! ORO NERO PER TUTTI!!
 
 Questa mod aggiunge nuovi oggetti dell'industria del petrolio e nuovi processi petrolchimici al server RGBCraft.
 
+Possiede attualmente un macchinario dedicato, ma altri saranno aggiunti in futuro.
+
+## Macchinari
+### Well Head
+
+Questo macchinario combina un separatore di gas, una trappola per condensato e un blowout preventer tutto in uno. 
+Si piazza sopra alla Pump della Buildcraft e, mentre la pompa aspira il petrolio, lo degassa e purifica dando come risultato non solo il petrolio originale, ma anche gas naturale e condensato!
+
+* Input:
+   * Petrolio (dalla pompa)
+* Output:
+   * Petrolio (normale, Buildcraft)
+   * Gas Metano (Gregtech)
+   * Condensato (condensate)
+
 ## Oggetti
 
 ### Idrocarburi
@@ -13,6 +28,7 @@ Questa mod aggiunge nuovi oggetti dell'industria del petrolio e nuovi processi p
 |---|---|---|---|---|---|---|
 |LPG|Gas|Combustibile|134 kcal|:x:|:x:|52 kWh|
 |Gasoline|Liquido|Carburante per motori, cracking stock|:x:|35 MJ, 3 ktick|:x:|68 kWh|
+|Condensate|Liquido|Va miscelato con la benzina|:x:|:x:|:x:|:x:|
 |Naphtha|Liquido|Combustibile, cracking stock|160 kcal|20 MJ, 50 ktick|:x:|76 kWh|
 |Diesel|Liquido|Combustibile|96 kcal|6 MJ, 100 ktick|:x:|:x:|
 |Heavy Fuel Oil|Liquido|Combustibile, cracking stock|216 kcal|:x:|82 kWh|:x:|
@@ -37,6 +53,12 @@ Questa mod aggiunge nuovi oggetti dell'industria del petrolio e nuovi processi p
 
 Tutti i materiali si possono ottenere ed utilizzare con processi petrolchimici.
 
+### Degassamento
+
+Va effettuato alla pompa, piazzandoci direttamente sopra un Well Head.
+
+Permette di recuperare metano e condensato che altrimenti andrebbero perduti.
+
 ### Desalificazione (desalting) 
 
 Con il Chemical Reactor:
@@ -54,6 +76,13 @@ Distillate Reflux Cell → LPG Cell, Gasoline Cell
 
 ### Distillazione sotto vuoto (vacuum distillation)
 Distillate Residue Cell → Heavy Fuel Oil, Paraffin, Mineral Oil, Asphalt
+
+### Miscelazione
+
+Permette di recuperare il condensato
+Con il Chemical Reactor:
+
+Condensate, Gasoline → Gasoline
 
 ### Cracking catalitico
 
