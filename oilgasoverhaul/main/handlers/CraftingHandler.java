@@ -185,6 +185,36 @@ public class CraftingHandler {
 		
 		GameRegistry.addShapedRecipe(new ItemStack(Blocks.wellHead, 1), new Object[] {
 				"PVG", "VTV", "DVD", 'P', pipe, 'V', valve, 'G', turbopump, 'T', tank, 'D', dieselpump
-		});		
+		});	
+		
+		//Gestione svuotamento celle
+		
+		cell.stackSize = 1;
+		lpg.stackSize = 1;
+		gasoline.stackSize = 1;
+		naphtha.stackSize = 1;
+		condensate.stackSize = 1;
+		distillateReflux.stackSize = 1;
+		distillateResidue.stackSize = 1;
+		desaltedCrude.stackSize = 1;
+		hfo.stackSize = 1;
+		paraffin.stackSize = 1;
+		asphalt.stackSize = 1;
+		mineralOil.stackSize = 1;
+		ic2.api.Ic2Recipes.addExtractorRecipe(lpg, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(gasoline, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(naphtha, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(condensate, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(distillateReflux, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(distillateResidue, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(desaltedCrude, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(hfo, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(paraffin, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(asphalt, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(mineralOil, cell);
+		
+		
+		
+		
 	}
 }

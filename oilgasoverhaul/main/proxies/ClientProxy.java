@@ -12,7 +12,9 @@ import net.minecraftforge.client.MinecraftForgeClient;
 import oilgasoverhaul.main.Main;
 import oilgasoverhaul.main.handlers.TextureFXHelper;
 import oilgasoverhaul.main.handlers.TextureLiquidsFX;
+import oilgasoverhaul.main.solid.rendertables.RenderTableBarrel55gal;
 import oilgasoverhaul.main.solid.rendertables.RenderTableWellhead;
+import oilgasoverhaul.main.tileentities.TileEntityBarrel55gal;
 import oilgasoverhaul.main.tileentities.TileEntityWellhead;
 
 public class ClientProxy extends CommonProxy {
@@ -68,6 +70,8 @@ public class ClientProxy extends CommonProxy {
 		 */
 		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWellhead.class, new RenderTableWellhead());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBarrel55gal.class, new RenderTableBarrel55gal());
+
 	}
 
 	@Mod.PostInit
