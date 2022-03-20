@@ -17,9 +17,13 @@ import net.minecraftforge.oredict.OreDictionary;
 import oilgasoverhaul.main.Main;
 import oilgasoverhaul.main.blocks.Blocks;
 import oilgasoverhaul.main.items.Items;
+import railcraft.common.api.crafting.IRollingMachineCraftingManager;
 import net.minecraft.block.Block;
+import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.world.World;
 
 public class CraftingHandler {
 
@@ -213,8 +217,10 @@ public class CraftingHandler {
 		ic2.api.Ic2Recipes.addExtractorRecipe(asphalt, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(mineralOil, cell);
 		
+		//barile
 		
-		
-		
+		ItemStack barrel55gal = new ItemStack(Blocks.barrel55gal);
+		barrel55gal.stackSize = 4;
+		GregtechCompat.addBenderRecipe(tank, barrel55gal, 100, 60);
 	}
 }
