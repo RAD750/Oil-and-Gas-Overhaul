@@ -94,7 +94,9 @@ Condensate, Gasoline → Gasoline
 
 Permette di produrre etilene.
 Con il Chemical Reactor:
+
 Naphtha + 2H2+O2 Cell → Ethylene
+
 Condensate + 2H2+O2 Cell → Ethylene
 
 ### Esterificazione
