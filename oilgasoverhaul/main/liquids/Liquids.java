@@ -43,6 +43,16 @@ public class Liquids {
 		//Condensate (Drip Gas)
 		LiquidHelper.addLiquid("Condensate", 3811, 11, 21511, 11, "Mixture", "Light Hydrocarbons", "Liquid");
 	
+	    //Ethylene
+		LiquidHelper.addLiquid("Ethylene", 3812, 12, 21512, 12, "Alkene", null, "Gas");
 		
+		//Ethyl sulfate
+		LiquidHelper.addLiquid("Ethyl Sulfate", 3813, 13, 21513, 13, "Ester", null, "Liquid");
+		
+		//Ethanol
+		LiquidHelper.addLiquid("Ethanol", 3814, 14, 21514, 14, "Alcohol", null, "Liquid");
+				
+		//E80 Gas
+		LiquidHelper.addLiquid("E85 Gasoline", 3815, 15, 21515, 15, "Mixture", "85% Ethanol, Gasoline", "Liquid");
 	}
 }

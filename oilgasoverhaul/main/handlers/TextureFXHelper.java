@@ -18,8 +18,8 @@ public class TextureFXHelper {
 	 */
 	
 	public static void defineTextureFX(int redMin, int redMax, int greenMin, int greenMax, int blueMin, int blueMax, int textureId) {
-		TextureLiquidsFX DistillateResidueFX = new TextureLiquidsFX(redMin, redMax, greenMin, greenMax, blueMin, blueMax, textureId, textureFile);
-		DistillateResidueFX.tileImage = 3595;
-		TextureFXManager.instance().addAnimation(DistillateResidueFX);
+		TextureLiquidsFX TextureFX = new TextureLiquidsFX(redMin, redMax, greenMin, greenMax, blueMin, blueMax, textureId, textureFile);
+		TextureFX.tileImage = 3595;
+		TextureFXManager.instance().addAnimation(TextureFX);
 	}
 }

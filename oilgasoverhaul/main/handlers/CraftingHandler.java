@@ -154,6 +154,7 @@ public class CraftingHandler {
 		
 		GregtechCompat.addCannerRecipe(gasoline, emptyCanister, filledCanister, cell, 100, 2);
 		
+		
 		//Miscela (solo con EnhGeology)
 		
 		ItemStack fuelMixture = CraftingHelpers.getOreDict("canisterFuelMixture");
@@ -191,8 +192,37 @@ public class CraftingHandler {
 				"PVG", "VTV", "DVD", 'P', pipe, 'V', valve, 'G', turbopump, 'T', tank, 'D', dieselpump
 		});	
 		
-		//Gestione svuotamento celle
+
 		
+		//barile
+		
+		ItemStack barrel55gal = new ItemStack(Blocks.barrel55gal);
+		barrel55gal.stackSize = 4;
+		GregtechCompat.addBenderRecipe(tank, barrel55gal, 100, 60);
+		
+		
+		naphtha.stackSize = 1;
+		ItemStack hydroCell = ic2.api.Items.getItem("electrolyzedWaterCell").copy();
+		ItemStack ethylene = CraftingHelpers.getOreDict("Ethylene Cell").copy();
+		GregtechCompat.addChemicalRecipe(naphtha, hydroCell, ethylene, 300);
+	
+		condensate.stackSize = 2;
+		GregtechCompat.addChemicalRecipe(condensate, hydroCell, ethylene, 300);
+		
+		ItemStack h2so4Cell = GregtechCompat.getGregTechItem(0, 1, 40);
+		ItemStack ethylSulfateCell = CraftingHelpers.getOreDict("Ethyl Sulfate Cell").copy();
+		ItemStack ethanol = CraftingHelpers.getOreDict("Ethanol Cell").copy();
+		GregtechCompat.addAlloySmelterRecipe(ethylene, h2so4Cell, ethylSulfateCell, 900, 350);
+		GregtechCompat.addBlastRecipe(ethylSulfateCell, hydroCell, ethanol, h2so4Cell, 100, 1100, 1400);
+		ItemStack E85Gasoline = CraftingHelpers.getOreDict("E85 Gasoline Cell").copy();
+		gasoline.stackSize = 13;
+		ethanol.stackSize = 51;
+		E85Gasoline.stackSize = 64;
+		GregtechCompat.addChemicalRecipe(gasoline, ethanol, E85Gasoline, 100);
+		GregtechCompat.addCannerRecipe(E85Gasoline, emptyCanister, filledCanister, cell, 100, 2);
+
+		
+		//Gestione svuotamento celle	
 		cell.stackSize = 1;
 		lpg.stackSize = 1;
 		gasoline.stackSize = 1;
@@ -205,6 +235,11 @@ public class CraftingHandler {
 		paraffin.stackSize = 1;
 		asphalt.stackSize = 1;
 		mineralOil.stackSize = 1;
+		ethylene.stackSize = 1;
+		ethylSulfateCell.stackSize = 1;
+		ethanol.stackSize = 1;
+		E85Gasoline.stackSize = 1;
+		
 		ic2.api.Ic2Recipes.addExtractorRecipe(lpg, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(gasoline, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(naphtha, cell);
@@ -216,11 +251,9 @@ public class CraftingHandler {
 		ic2.api.Ic2Recipes.addExtractorRecipe(paraffin, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(asphalt, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(mineralOil, cell);
-		
-		//barile
-		
-		ItemStack barrel55gal = new ItemStack(Blocks.barrel55gal);
-		barrel55gal.stackSize = 4;
-		GregtechCompat.addBenderRecipe(tank, barrel55gal, 100, 60);
+		ic2.api.Ic2Recipes.addExtractorRecipe(ethylene, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(ethylSulfateCell, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(E85Gasoline, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(ethanol, cell);
 	}
 }

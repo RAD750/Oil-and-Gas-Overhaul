@@ -51,7 +51,7 @@ public class ClientProxy extends CommonProxy {
 		//LPG (3)
 		TextureFXHelper.defineTextureFX(160, 170, 190, 200, 215, 225, 3);
 		// Gasoline (4)
-		TextureFXHelper.defineTextureFX(160, 170, 190, 195, 53, 60, 4);
+		TextureFXHelper.defineTextureFX(158, 170, 190, 192, 53, 60, 4);
 		// Naphtha (5)
 		TextureFXHelper.defineTextureFX(220, 230, 190, 200, 35, 45, 5);
 		// HFO (7) 
@@ -64,6 +64,14 @@ public class ClientProxy extends CommonProxy {
 		TextureFXHelper.defineTextureFX(90, 95, 40, 45, 115, 200, 10);
 		// Condensate (11)
 		TextureFXHelper.defineTextureFX(140, 145, 185, 190, 193, 198, 11);
+	    //Ethylene (12)
+		TextureFXHelper.defineTextureFX(226, 229, 207, 210, 230, 235, 12);
+		//Ethyl sulfate (13)
+		TextureFXHelper.defineTextureFX(239, 246, 210, 218, 165, 172, 13);
+	    //Ethanol (14)
+		TextureFXHelper.defineTextureFX(170, 175, 62, 70, 60, 65, 14);
+		//E85 Gas (15)
+		TextureFXHelper.defineTextureFX(165, 175, 195, 200, 57, 65, 15);
 		
 		/*
 		 * Modeli 3D
