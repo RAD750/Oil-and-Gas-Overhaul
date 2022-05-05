@@ -216,9 +216,11 @@ public class CraftingHandler {
 		GregtechCompat.addBlastRecipe(ethylSulfateCell, hydroCell, ethanol, h2so4Cell, 100, 1100, 1400);
 		ItemStack E85Gasoline = CraftingHelpers.getOreDict("E85 Gasoline Cell").copy();
 		gasoline.stackSize = 13;
+		condensate.stackSize = 13;
 		ethanol.stackSize = 51;
 		E85Gasoline.stackSize = 64;
 		GregtechCompat.addChemicalRecipe(gasoline, ethanol, E85Gasoline, 100);
+		GregtechCompat.addChemicalRecipe(condensate, ethanol, E85Gasoline, 100);
 		GregtechCompat.addCannerRecipe(E85Gasoline, emptyCanister, filledCanister, cell, 100, 2);
 
 		
