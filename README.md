@@ -6,4 +6,4 @@ KYAAAAA! ORO NERO PER TUTTI!!
 
 Questa mod aggiunge nuovi oggetti dell'industria del petrolio e nuovi processi petrolchimici al server RGBCraft.
 
-[# TUTTE LE INFORMAZIONI SONO PRESENTI NELLA WIKI](https://github.com/RAD750/Oil-and-Gas-Overhaul/wiki)
+# [TUTTE LE INFORMAZIONI SONO PRESENTI NELLA WIKI](https://github.com/RAD750/Oil-and-Gas-Overhaul/wiki)
