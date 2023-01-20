@@ -3,14 +3,20 @@ package oilgasoverhaul.main.handlers;
 import java.util.ArrayList;
 import java.util.List;
 
+import buildcraft.api.core.Position;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
+import net.minecraftforge.liquids.ITankContainer;
 import net.minecraftforge.liquids.LiquidContainerData;
 import net.minecraftforge.liquids.LiquidContainerRegistry;
 import net.minecraftforge.liquids.LiquidDictionary;
 import net.minecraftforge.liquids.LiquidStack;
+import net.minecraftforge.liquids.LiquidTank;
 import net.minecraftforge.oredict.OreDictionary;
 import oilgasoverhaul.main.CreativeTab;
 import oilgasoverhaul.main.Main;
@@ -70,14 +76,22 @@ public class LiquidHelper {
 		liquidStack = LiquidDictionary.getOrCreateLiquid(name, liquidStack);		
 		LanguageRegistry.addName(liquidItem, name);
 
-		liquids.add(liquidStack);
-	
+		liquids.add(liquidStack);	
 
 		LiquidContainerData liquidData = new LiquidContainerData(liquidStack,
 				new ItemStack(itemCell, 1), ic2.api.Items.getItem("cell"));
 		LiquidContainerRegistry.registerLiquid(liquidData);
 		Main.oilgasLog.info("Added Liquid: " + name);
 		
-
 	}
+	
+    public static int outputLiquidOnSide(LiquidTank tank, World world, Position position) {
+        TileEntity tileEntity = world.getBlockTileEntity((int) position.x, (int) position.y, (int) position.z);
+        if (tileEntity != null && tileEntity instanceof ITankContainer && tank.getLiquid().amount > 0) {
+            int amount = ((ITankContainer) tileEntity).fill(position.orientation, tank.getLiquid(), true);
+            tank.drain(amount, true);
+            return amount;
+        }
+        return 0;
+    }
 }

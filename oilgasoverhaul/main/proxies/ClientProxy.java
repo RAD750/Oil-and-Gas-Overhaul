@@ -9,12 +9,16 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.common.MinecraftForge;
 import oilgasoverhaul.main.Main;
+import oilgasoverhaul.main.handlers.SoundHandler;
 import oilgasoverhaul.main.handlers.TextureFXHelper;
 import oilgasoverhaul.main.handlers.TextureLiquidsFX;
 import oilgasoverhaul.main.solid.rendertables.RenderTableBarrel55gal;
+import oilgasoverhaul.main.solid.rendertables.RenderTableFrackingHead;
 import oilgasoverhaul.main.solid.rendertables.RenderTableWellhead;
 import oilgasoverhaul.main.tileentities.TileEntityBarrel55gal;
+import oilgasoverhaul.main.tileentities.TileEntityFrackingHead;
 import oilgasoverhaul.main.tileentities.TileEntityWellhead;
 
 public class ClientProxy extends CommonProxy {
@@ -27,7 +31,7 @@ public class ClientProxy extends CommonProxy {
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		super.preInit(event);
-		
+		MinecraftForge.EVENT_BUS.register(new SoundHandler());
 	}
 
 	@Init
@@ -79,6 +83,8 @@ public class ClientProxy extends CommonProxy {
 		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWellhead.class, new RenderTableWellhead());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBarrel55gal.class, new RenderTableBarrel55gal());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFrackingHead.class, new RenderTableFrackingHead());
+
 
 	}
 

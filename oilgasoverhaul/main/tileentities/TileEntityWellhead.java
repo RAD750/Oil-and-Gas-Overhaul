@@ -15,7 +15,7 @@ public class TileEntityWellhead extends TileEntity implements ITankContainer {
 	public LiquidTank condensateTank = new LiquidTank(1000);
 	public LiquidTank naturalGasTank = new LiquidTank(1000);
 	public LiquidTank crudeTank = new LiquidTank(1000);
-
+	
 	@Override 
 	public void updateEntity() {
 		TileEntity pump = worldObj.getBlockTileEntity(this.xCoord, this.yCoord - 1, this.zCoord);
@@ -97,7 +97,7 @@ public class TileEntityWellhead extends TileEntity implements ITankContainer {
 		case WEST:
 			return new ILiquidTank [] {this.crudeTank};
 		default:
-			return null;
+			return new ILiquidTank[] {};
 		}
 	}
 

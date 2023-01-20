@@ -1,5 +1,7 @@
 package oilgasoverhaul.main;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import cpw.mods.fml.common.Mod;
@@ -14,6 +16,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.src.BaseMod;
 import net.minecraftforge.liquids.LiquidContainerRegistry;
 import net.minecraftforge.liquids.LiquidDictionary;
+import net.minecraftforge.liquids.LiquidStack;
 import oilgasoverhaul.main.blocks.Blocks;
 import oilgasoverhaul.main.handlers.CraftingHandler;
 import oilgasoverhaul.main.handlers.GeneratorHandler;
@@ -23,7 +26,7 @@ import oilgasoverhaul.main.items.Items;
 import oilgasoverhaul.main.proxies.CommonProxy;
 import oilgasoverhaul.main.tileentities.TileEntities;
 
-@Mod(name="Oil & Gas Overhaul", version="1.2", modid="oilgasoverhaul", dependencies="required-after:IC2; after:factorization; after:Railcraft; after:ThermalExpansion; after:ThermalExpansion|Transport; after:ThermalExpansion|Energy; after:ThermalExpansion|Factory; after:XyCraft; after:MetallurgyCore; after:MetallurgyBase; after:MetallurgyEnder; after:MetallurgyFantasy; after:MetallurgyNether; after:MetallurgyPrecious; after:MetallurgyUtility; after:BuildCraft|Silicon; after:BuildCraft|Core; after:BuildCraft|Transport; after:BuildCraft|Factory; after:BuildCraft|Energy; after:BuildCraft|Builders; after:enhancedgeology; after:railcraft;")
+@Mod(name="Oil & Gas Overhaul", version="1.3", modid="oilgasoverhaul", dependencies="required-after:IC2; after:factorization; after:Railcraft; after:ThermalExpansion; after:ThermalExpansion|Transport; after:ThermalExpansion|Energy; after:ThermalExpansion|Factory; after:XyCraft; after:MetallurgyCore; after:MetallurgyBase; after:MetallurgyEnder; after:MetallurgyFantasy; after:MetallurgyNether; after:MetallurgyPrecious; after:MetallurgyUtility; after:BuildCraft|Silicon; after:BuildCraft|Core; after:BuildCraft|Transport; after:BuildCraft|Factory; after:BuildCraft|Energy; after:BuildCraft|Builders; after:enhancedgeology; after:railcraft;")
 public class Main extends BaseMod{
 	
 	public static Logger oilgasLog = Logger.getLogger("oilgasoverhaul");
@@ -33,7 +36,7 @@ public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "1.2";
+		return "1.4";
 	}
 
 	@Override
@@ -42,6 +45,7 @@ public class Main extends BaseMod{
 	
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
+    	proxy.preInit(event);
 		oilgasLog.info("Lego11 si distanzia completamente dall'industria Oil & Gas e ricorda che l'elettrico, il rinnovabile ed il nucleare sono il futuro.");			
 	}
 	
@@ -65,5 +69,6 @@ public class Main extends BaseMod{
 		GeneratorHandler.addGeneratorFuels();
 		MinablesHandler.addMinables();
 	    proxy.postInit(event);
+	    System.out.println(LiquidDictionary.getLiquids().toString());
 	}
 }

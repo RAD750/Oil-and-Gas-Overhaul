@@ -12,7 +12,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class Items {
 
 	//ITEMS
-	public static Item AlCl3, woodChips, woodPellets, paraffinedWood;
+	public static Item AlCl3, woodChips, woodPellets, paraffinedWood, hpPump;
 	
 	public static void initItems() {
 		AlCl3 = new ItemCatalyst(22000, 0, "AlCl3", 64, "AlCl₃");
