@@ -7,5 +7,7 @@ public class TileEntities {
 		GameRegistry.registerTileEntity(TileEntityWellhead.class, "ogoTileEntityWellhead");
 		GameRegistry.registerTileEntity(TileEntityBarrel55gal.class, "TileEntityBarrel55gal");
 		GameRegistry.registerTileEntity(TileEntityFrackingHead.class, "ogoTileEntityFrackingHead");
+		GameRegistry.registerTileEntity(TileEntityLNGAbsorptionChiller.class, "ogoTileEntityLNGAbsorptionChiller");
+		GameRegistry.registerTileEntity(TileEntityLNGHeater.class, "ogoTileEntityLNGHeater");
 	}
 }

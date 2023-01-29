@@ -17,6 +17,8 @@ public class SoundHandler {
         try
         {
             event.manager.addSound("machines/OGO_groundwell.ogg", new File("resources/mod/sound/OGO_groundwell.ogg"));
+            event.manager.addSound("machines/OGO_lngheater.ogg", new File("resources/mod/sound/OGO_lngheater.ogg"));
+
         }
         catch (Exception e)
         {

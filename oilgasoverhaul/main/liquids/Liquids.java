@@ -54,5 +54,11 @@ public class Liquids {
 				
 		//E80 Gas
 		LiquidHelper.addLiquid("E85 Gasoline", 3815, 15, 21515, 15, "Mixture", "85% Ethanol, Gasoline", "Liquid");
+		
+		//LNG
+		LiquidHelper.addLiquid("LNG", 3816, 16, 21516, 16, "Liquefied Gas", "CH₄", "Gas");
+		
+		//Ammoniaca
+		LiquidHelper.addLiquid("Ammonia", 3817, 17, 21516, 17, "Ammonia", "NH₃", "Liquid Solution");
 	}
 }

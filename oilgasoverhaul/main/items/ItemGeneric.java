@@ -1,11 +1,19 @@
 package oilgasoverhaul.main.items;
 
+import java.util.List;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import oilgasoverhaul.main.CreativeTab;
 
 public class ItemGeneric extends Item {
+	
+	private String information;
 
-	public ItemGeneric(int id, int textureId, String itemName, int maxStackSize) {
+	public ItemGeneric(int id, int textureId, String itemName, int maxStackSize, String information) {
 		super(id-256);
 		/**
 		 * Registra un oggetto generico
@@ -20,6 +28,15 @@ public class ItemGeneric extends Item {
 		this.setCreativeTab(CreativeTab.tabOGOMain);
 		this.setItemName(itemName);
 		this.setMaxStackSize(maxStackSize);
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List toolTip, boolean par4)
+	{
+		super.addInformation(par1ItemStack, par2EntityPlayer, toolTip, par4);
+		toolTip.add(information);
+			
 	}
 
 }

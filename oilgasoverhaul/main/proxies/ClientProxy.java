@@ -16,9 +16,13 @@ import oilgasoverhaul.main.handlers.TextureFXHelper;
 import oilgasoverhaul.main.handlers.TextureLiquidsFX;
 import oilgasoverhaul.main.solid.rendertables.RenderTableBarrel55gal;
 import oilgasoverhaul.main.solid.rendertables.RenderTableFrackingHead;
+import oilgasoverhaul.main.solid.rendertables.RenderTableLNGAbsorptionChiller;
+import oilgasoverhaul.main.solid.rendertables.RenderTableLNGHeater;
 import oilgasoverhaul.main.solid.rendertables.RenderTableWellhead;
 import oilgasoverhaul.main.tileentities.TileEntityBarrel55gal;
 import oilgasoverhaul.main.tileentities.TileEntityFrackingHead;
+import oilgasoverhaul.main.tileentities.TileEntityLNGAbsorptionChiller;
+import oilgasoverhaul.main.tileentities.TileEntityLNGHeater;
 import oilgasoverhaul.main.tileentities.TileEntityWellhead;
 
 public class ClientProxy extends CommonProxy {
@@ -76,7 +80,10 @@ public class ClientProxy extends CommonProxy {
 		TextureFXHelper.defineTextureFX(170, 175, 62, 70, 60, 65, 14);
 		//E85 Gas (15)
 		TextureFXHelper.defineTextureFX(165, 175, 195, 200, 57, 65, 15);
-		
+		//LNG
+		TextureFXHelper.defineTextureFX(182, 197, 52, 57, 190, 210, 16);
+		//Ammoniaca
+		TextureFXHelper.defineTextureFX(140, 150, 160, 170, 210, 240, 17);
 		/*
 		 * Modeli 3D
 		 */
@@ -84,7 +91,8 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWellhead.class, new RenderTableWellhead());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBarrel55gal.class, new RenderTableBarrel55gal());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFrackingHead.class, new RenderTableFrackingHead());
-
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLNGAbsorptionChiller.class, new RenderTableLNGAbsorptionChiller());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLNGHeater.class, new RenderTableLNGHeater());
 
 	}
 

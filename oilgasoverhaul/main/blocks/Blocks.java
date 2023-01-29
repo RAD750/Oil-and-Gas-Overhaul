@@ -10,13 +10,16 @@ public class Blocks {
 	public static Block wellHead;
 	public static Block barrel55gal;
 	public static Block frackingHead;
+	public static Block lngAbsorptionChiller;
+	public static Block lngHeater;
 	
 	public static void initBlocks() {
 		asphalt = new GenericBlock(2100, 0, Material.rock, "asphaltBlock", 0.8f);
 		wellHead = new BlockWellhead(2200, 1, Material.iron, "wellHead", 0.8f);
 		barrel55gal = new BlockBarrel55gal(2201, 2, Material.iron, "barrel55gal", 0.8f);
 		frackingHead = new BlockFrackingHead(2202, 3, Material.iron, "frackingHead", 2.0f);
-
+		lngAbsorptionChiller = new BlockLNGAbsorptionChiller(2203, 4, Material.iron, "lngAbsorptionChiller", 2.0f);
+		lngHeater = new BlockLNGHeater(2204, 5, Material.iron, "lngHeater", 2.0f);
 	}
 	
 	public static void registerBlocks() {
@@ -24,6 +27,8 @@ public class Blocks {
 		GameRegistry.registerBlock(wellHead, "wellHead");
 		GameRegistry.registerBlock(barrel55gal, "barrel55gal");
 		GameRegistry.registerBlock(frackingHead, "frackingHead");
+		GameRegistry.registerBlock(lngAbsorptionChiller, "lngAbsorptionChiller");
+		GameRegistry.registerBlock(lngHeater, "lngHeater");
 
 	}
 	
@@ -32,5 +37,8 @@ public class Blocks {
 		LanguageRegistry.addName(wellHead, "Well Head");
 		LanguageRegistry.addName(barrel55gal, "55 Gallon Barrel");
 		LanguageRegistry.addName(frackingHead, "Fracking Head");
+		LanguageRegistry.addName(lngAbsorptionChiller, "LNG Absorption Chiller");
+		LanguageRegistry.addName(lngHeater, "LNG Heater");
+
 	}
 }

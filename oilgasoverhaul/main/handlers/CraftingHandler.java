@@ -225,6 +225,39 @@ public class CraftingHandler {
 		GregtechCompat.addCannerRecipe(E85Gasoline, emptyCanister, filledCanister, cell, 100, 2);
 
 		
+		
+		ItemStack ingotIridium = CraftingHelpers.getOreDict("ingotIridium");
+		ItemStack feedwaterPump = railcraft.common.api.core.items.ItemRegistry.getItem("part.feedwaterpump", 1);
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.frackingHead, 1), new Object[] {
+				"FFF", "IVI", "FPF",
+				'F', feedwaterPump,
+				'I', ingotIridium,
+				'V', valve,
+				'P', pipe
+		});
+		
+		
+		ItemStack lng = CraftingHelpers.getOreDict("LNG Cell").copy();
+		ItemStack ammonia = CraftingHelpers.getOreDict("Ammonia Cell").copy();
+		ItemStack nitrogen = GregtechCompat.getGregTechItem(2, 1, 15).copy();
+		ItemStack hydrogen = GregtechCompat.getGregTechItem(2, 1, 0).copy();
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.lngAbsorptionChiller, 1), new Object[] {
+				"NVN", "VHV", "TWF", 'N', ammonia, 'V', valve, 'F', feedwaterPump, 'H', hydrogen, 'W', new ItemStack(Item.bucketWater), 'T', turbopump
+		});
+		
+		
+		hydrogen.stackSize = 3;
+		
+		GregtechCompat.addChemicalRecipe(nitrogen, hydrogen, ammonia, 60);
+
+		ItemStack liquidFirebox = railcraft.common.api.core.items.ItemRegistry.getItem("machine.beta.boiler.firebox.liquid", 1);
+		ItemStack lpBoiler = railcraft.common.api.core.items.ItemRegistry.getItem("machine.beta.boiler.tank.pressure.low", 1);
+		
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.lngHeater, 1), new Object[] {
+				" I ", "VBV", " F ", 'I', new ItemStack(Item.ingotIron), 'V', valve, 'F', liquidFirebox, 'B', lpBoiler
+		});
+				
 		//Gestione svuotamento celle	
 		cell.stackSize = 1;
 		lpg.stackSize = 1;
@@ -242,6 +275,8 @@ public class CraftingHandler {
 		ethylSulfateCell.stackSize = 1;
 		ethanol.stackSize = 1;
 		E85Gasoline.stackSize = 1;
+		lng.stackSize = 1;
+		ammonia.stackSize = 1;
 		
 		ic2.api.Ic2Recipes.addExtractorRecipe(lpg, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(gasoline, cell);
@@ -258,15 +293,8 @@ public class CraftingHandler {
 		ic2.api.Ic2Recipes.addExtractorRecipe(ethylSulfateCell, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(E85Gasoline, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(ethanol, cell);
-		
-		ItemStack ingotIridium = CraftingHelpers.getOreDict("ingotIridium");
-		ItemStack feedwaterPump = railcraft.common.api.core.items.ItemRegistry.getItem("part.feedwaterpump", 1);
-		GameRegistry.addShapedRecipe(new ItemStack(Blocks.frackingHead, 1), new Object[] {
-				"FFF", "IVI", "FPF",
-				'F', feedwaterPump,
-				'I', ingotIridium,
-				'V', valve,
-				'P', pipe
-		});
+		ic2.api.Ic2Recipes.addExtractorRecipe(lng, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(ammonia, cell);
+
 	}
 }
