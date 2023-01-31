@@ -59,6 +59,6 @@ public class Liquids {
 		LiquidHelper.addLiquid("LNG", 3816, 16, 21516, 16, "Liquefied Gas", "CH₄", "Gas");
 		
 		//Ammoniaca
-		LiquidHelper.addLiquid("Ammonia", 3817, 17, 21516, 17, "Ammonia", "NH₃", "Liquid Solution");
+		LiquidHelper.addLiquid("Ammonia", 3817, 17, 21517, 17, "Ammonia", "NH₃", "Liquid Solution");
 	}
 }
