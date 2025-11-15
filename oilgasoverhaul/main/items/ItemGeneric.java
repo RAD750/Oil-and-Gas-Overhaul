@@ -28,6 +28,7 @@ public class ItemGeneric extends Item {
 		this.setCreativeTab(CreativeTab.tabOGOMain);
 		this.setItemName(itemName);
 		this.setMaxStackSize(maxStackSize);
+		this.information = information;
 	}
 	
 	@Override

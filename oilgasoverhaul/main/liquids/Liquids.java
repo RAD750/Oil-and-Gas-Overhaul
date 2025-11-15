@@ -60,5 +60,12 @@ public class Liquids {
 		
 		//Ammoniaca
 		LiquidHelper.addLiquid("Ammonia", 3817, 17, 21517, 17, "Ammonia", "NH₃", "Liquid Solution");
+		
+		//Gas di città
+		LiquidHelper.addLiquid("Town Gas", 3818, 18, 21518, 18, "Mixture", "CO, H₂, CH₄", "Gas");
+		
+		//H2PO4 condivide texture con Ammoniaca
+		LiquidHelper.addLiquid("Phosphoric Acid", 3819, 17, 21519, 17, "Acid", "H₂PO₄", "Liquid Solution");
+		
 	}
 }

@@ -14,9 +14,11 @@ public class Fuels {
 		FuelManager.addBoilerFuel(LiquidDictionary.getLiquid("Ethanol", LiquidContainerRegistry.BUCKET_VOLUME), 105000);
 		FuelManager.addBoilerFuel(LiquidDictionary.getLiquid("E85 Gasoline", LiquidContainerRegistry.BUCKET_VOLUME), 132000);
 		FuelManager.addBoilerFuel(LiquidDictionary.getLiquid("LNG", LiquidContainerRegistry.BUCKET_VOLUME), 900000);
+		FuelManager.addBoilerFuel(LiquidDictionary.getLiquid("Town Gas", LiquidContainerRegistry.BUCKET_VOLUME), 22000);
 		
 		IronEngineFuel.fuels.add(new IronEngineFuel(LiquidDictionary.getLiquid("Gasoline", LiquidContainerRegistry.BUCKET_VOLUME), 35, 30000));
 		IronEngineFuel.fuels.add(new IronEngineFuel(LiquidDictionary.getLiquid("Naphtha", LiquidContainerRegistry.BUCKET_VOLUME), 20, 50000));
 		IronEngineFuel.fuels.add(new IronEngineFuel(LiquidDictionary.getLiquid("E85 Gasoline", LiquidContainerRegistry.BUCKET_VOLUME), 30, 10000));
+		IronEngineFuel.fuels.add(new IronEngineFuel(LiquidDictionary.getLiquid("E85 Gasoline", LiquidContainerRegistry.BUCKET_VOLUME), 35, 8000));
 		}
 }

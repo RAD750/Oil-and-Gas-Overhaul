@@ -258,6 +258,15 @@ public class CraftingHandler {
 				" I ", "VBV", " F ", 'I', new ItemStack(Item.ingotIron), 'V', valve, 'F', liquidFirebox, 'B', lpBoiler
 		});
 				
+		
+		ItemStack h2po4 = CraftingHelpers.getOreDict("Phosphoric Acid Cell").copy();
+		ItemStack phosphorus = GregtechCompat.getGregTechItem(45, 1, 1);
+				
+		h2so4Cell.stackSize = 5;
+		h2po4.stackSize = 3;
+		
+		GregtechCompat.addChemicalRecipe(phosphorus, h2so4Cell , h2po4, 50);
+		
 		//Gestione svuotamento celle	
 		cell.stackSize = 1;
 		lpg.stackSize = 1;
@@ -277,6 +286,7 @@ public class CraftingHandler {
 		E85Gasoline.stackSize = 1;
 		lng.stackSize = 1;
 		ammonia.stackSize = 1;
+		h2po4.stackSize = 1;
 		
 		ic2.api.Ic2Recipes.addExtractorRecipe(lpg, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(gasoline, cell);
@@ -295,6 +305,7 @@ public class CraftingHandler {
 		ic2.api.Ic2Recipes.addExtractorRecipe(ethanol, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(lng, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(ammonia, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(h2po4, cell);
 
 	}
 }
