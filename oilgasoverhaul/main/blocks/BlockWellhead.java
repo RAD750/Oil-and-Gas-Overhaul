@@ -4,8 +4,10 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import oilgasoverhaul.main.CreativeTab;
@@ -76,5 +78,38 @@ public class BlockWellhead extends BlockContainer {
 	public int quantityDropped() {
 		return 1;
 	}
+	
+	@Override
+    public boolean isFlammable(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
+    {
+        return true;
+    }
+	
+	@Override
+	public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face) {
+		
+		return 200;
+	}
+	
+	@Override
+    public int getFireSpreadSpeed(World world, int x, int y, int z, int metadata, ForgeDirection face)
+    {	
+
+		return 200;
+    }
+	
+	@Override
+	
+    public void onBlockDestroyedByExplosion(World par1World, int par2, int par3, int par4)
+    {
+        if (!par1World.isRemote)
+        {
+            EntityTNTPrimed var5 = new EntityTNTPrimed(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F));
+            var5.fuse = 0;
+            par1World.spawnEntityInWorld(var5);
+        }
+    }
+	
+	
 	
 }

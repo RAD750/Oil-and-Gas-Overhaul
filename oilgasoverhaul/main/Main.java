@@ -26,7 +26,7 @@ import oilgasoverhaul.main.items.Items;
 import oilgasoverhaul.main.proxies.CommonProxy;
 import oilgasoverhaul.main.tileentities.TileEntities;
 
-@Mod(name="Oil & Gas Overhaul", version="1.5", modid="oilgasoverhaul", dependencies="required-after:IC2; after:factorization; after:Railcraft; after:ThermalExpansion; after:ThermalExpansion|Transport; after:ThermalExpansion|Energy; after:ThermalExpansion|Factory; after:XyCraft; after:MetallurgyCore; after:MetallurgyBase; after:MetallurgyEnder; after:MetallurgyFantasy; after:MetallurgyNether; after:MetallurgyPrecious; after:MetallurgyUtility; after:BuildCraft|Silicon; after:BuildCraft|Core; after:BuildCraft|Transport; after:BuildCraft|Factory; after:BuildCraft|Energy; after:BuildCraft|Builders; after:enhancedgeology; after:railcraft;")
+@Mod(name="Oil & Gas Overhaul", version="1.7", modid="oilgasoverhaul", dependencies="required-after:IC2; after:factorization; after:Railcraft; after:ThermalExpansion; after:ThermalExpansion|Transport; after:ThermalExpansion|Energy; after:ThermalExpansion|Factory; after:XyCraft; after:MetallurgyCore; after:MetallurgyBase; after:MetallurgyEnder; after:MetallurgyFantasy; after:MetallurgyNether; after:MetallurgyPrecious; after:MetallurgyUtility; after:BuildCraft|Silicon; after:BuildCraft|Core; after:BuildCraft|Transport; after:BuildCraft|Factory; after:BuildCraft|Energy; after:BuildCraft|Builders; after:enhancedgeology; after:railcraft;")
 public class Main extends BaseMod{
 	
 	public static Logger oilgasLog = Logger.getLogger("oilgasoverhaul");
@@ -36,7 +36,7 @@ public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "1.5";
+		return "1.7";
 	}
 
 	@Override

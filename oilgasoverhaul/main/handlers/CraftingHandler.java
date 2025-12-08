@@ -260,12 +260,33 @@ public class CraftingHandler {
 				
 		
 		ItemStack h2po4 = CraftingHelpers.getOreDict("Phosphoric Acid Cell").copy();
-		ItemStack phosphorus = GregtechCompat.getGregTechItem(45, 1, 1);
+		ItemStack phosphorus = GregtechCompat.getGregTechItem(1, 1, 45);
 				
 		h2so4Cell.stackSize = 5;
 		h2po4.stackSize = 3;
 		
 		GregtechCompat.addChemicalRecipe(phosphorus, h2so4Cell , h2po4, 50);
+		
+		h2po4.stackSize = 1;
+		ammonia.stackSize = 1;
+		GregtechCompat.addChemicalRecipe(h2po4, ammonia , new ItemStack(Items.monammoniumPhosphate, 1), 50);
+		
+		ItemStack air = CraftingHelpers.getOreDict("molecule_2o");
+		air.stackSize = 64;
+		
+		ItemStack oxygen = CraftingHelpers.getOreDict("cellOxygen");
+		oxygen.stackSize = 15;
+		
+		ItemStack argon = CraftingHelpers.getOreDict("Argon Cell");
+		argon.stackSize = 4;
+		
+		ItemStack co2 = CraftingHelpers.getOreDict("Carbon Dioxide Cell");
+		co2.stackSize = 1;
+		
+		
+		nitrogen.stackSize = 45;
+		
+		GregtechCompat.addDistillationRecipe(air, 0, nitrogen, oxygen, argon, co2, 0, 0);
 		
 		//Gestione svuotamento celle	
 		cell.stackSize = 1;
@@ -287,6 +308,8 @@ public class CraftingHandler {
 		lng.stackSize = 1;
 		ammonia.stackSize = 1;
 		h2po4.stackSize = 1;
+		argon.stackSize = 1;
+		co2.stackSize = 1;
 		
 		ic2.api.Ic2Recipes.addExtractorRecipe(lpg, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(gasoline, cell);
@@ -306,6 +329,8 @@ public class CraftingHandler {
 		ic2.api.Ic2Recipes.addExtractorRecipe(lng, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(ammonia, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(h2po4, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(argon, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(co2, cell);
 
 	}
 }

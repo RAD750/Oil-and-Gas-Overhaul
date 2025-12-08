@@ -67,5 +67,15 @@ public class Liquids {
 		//H2PO4 condivide texture con Ammoniaca
 		LiquidHelper.addLiquid("Phosphoric Acid", 3819, 17, 21519, 17, "Acid", "H₂PO₄", "Liquid Solution");
 		
+		//CO2
+		LiquidHelper.addLiquid("Carbon Dioxide", 3820, 19, 21520, 19, "Gas", "CO₂", "Gas");
+		
+		//Argon
+		LiquidHelper.addLiquid("Argon", 3821, 20, 21521, 20, "Noble Gas", "Ar", "Gas");
+		
+		//SF6
+		LiquidHelper.addLiquid("Sulfur Hexafluoride", 3822, 21, 21522, 20, "Gas", "SF₆", "Gas");
+		
+		
 	}
 }
