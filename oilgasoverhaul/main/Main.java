@@ -19,6 +19,7 @@ import net.minecraftforge.liquids.LiquidDictionary;
 import net.minecraftforge.liquids.LiquidStack;
 import oilgasoverhaul.main.blocks.Blocks;
 import oilgasoverhaul.main.handlers.CraftingHandler;
+import oilgasoverhaul.main.handlers.CraftingOverrides;
 import oilgasoverhaul.main.handlers.GeneratorHandler;
 import oilgasoverhaul.main.handlers.MinablesHandler;
 import oilgasoverhaul.main.handlers.OreDictionaryHandler;
@@ -26,7 +27,7 @@ import oilgasoverhaul.main.items.Items;
 import oilgasoverhaul.main.proxies.CommonProxy;
 import oilgasoverhaul.main.tileentities.TileEntities;
 
-@Mod(name="Oil & Gas Overhaul", version="1.7", modid="oilgasoverhaul", dependencies="required-after:IC2; after:factorization; after:Railcraft; after:ThermalExpansion; after:ThermalExpansion|Transport; after:ThermalExpansion|Energy; after:ThermalExpansion|Factory; after:XyCraft; after:MetallurgyCore; after:MetallurgyBase; after:MetallurgyEnder; after:MetallurgyFantasy; after:MetallurgyNether; after:MetallurgyPrecious; after:MetallurgyUtility; after:BuildCraft|Silicon; after:BuildCraft|Core; after:BuildCraft|Transport; after:BuildCraft|Factory; after:BuildCraft|Energy; after:BuildCraft|Builders; after:enhancedgeology; after:railcraft;")
+@Mod(name="Oil & Gas Overhaul", version="2.0", modid="oilgasoverhaul", dependencies="required-after:IC2; required-after:GregTech_Addon; after:MFReloaded; after:factorization; after:Railcraft; after:ThermalExpansion; after:ThermalExpansion|Transport; after:ThermalExpansion|Energy; after:ThermalExpansion|Factory; after:XyCraft; after:MetallurgyCore; after:MetallurgyBase; after:MetallurgyEnder; after:MetallurgyFantasy; after:MetallurgyNether; after:MetallurgyPrecious; after:MetallurgyUtility; after:BuildCraft|Silicon; after:BuildCraft|Core; after:BuildCraft|Transport; after:BuildCraft|Factory; after:BuildCraft|Energy; after:BuildCraft|Builders; after:enhancedgeology; after:railcraft;")
 public class Main extends BaseMod{
 	
 	public static Logger oilgasLog = Logger.getLogger("oilgasoverhaul");
@@ -36,7 +37,7 @@ public class Main extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "1.7";
+		return "2.0";
 	}
 
 	@Override
@@ -68,6 +69,7 @@ public class Main extends BaseMod{
 		GameRegistry.registerFuelHandler(new oilgasoverhaul.main.handlers.FuelHandler());
 		GeneratorHandler.addGeneratorFuels();
 		MinablesHandler.addMinables();
+		CraftingOverrides.initOverrides();
 	    proxy.postInit(event);
 	}
 }
