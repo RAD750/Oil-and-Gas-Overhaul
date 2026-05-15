@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.lwjgl.opengl.AMDDepthClampSeparate;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import ljdp.minechem.api.core.Chemical;
 import ljdp.minechem.api.core.Element;
@@ -34,7 +36,7 @@ public class CraftingHandler {
 		 * 
 		 * getGregTechItem(TIPO, QTA, META)
 		 * 
-		 * TIPO: 0. Lingotti 1. Polveri 2. Celle
+		 * TIPO: 0. Lingotti 1. Polveri 2. Celle 3. Parti misc. 4. Tiny pile
 		 */
 		
 		// Desalificazione
@@ -89,13 +91,19 @@ public class CraftingHandler {
 		// Nafta + Pt -> Benzina
 		naphtha.stackSize = 32;
 		gasoline.stackSize = 32;
-		ItemStack platinumDust = GregtechCompat.getGregTechItem(1, 1, 27);
-		GregtechCompat.addChemicalRecipe(naphtha, platinumDust, gasoline, 900);
+		ItemStack tinyPlatinumDust = GregtechCompat.getGregTechItem(4, 1, 27);
+		GregtechCompat.addChemicalRecipe(naphtha, tinyPlatinumDust, gasoline, 900);
 		
 		// Benzina + Pt -> GPL
 		lpg.stackSize = 32;
-		GregtechCompat.addChemicalRecipe(gasoline, platinumDust, lpg, 900);
+		GregtechCompat.addChemicalRecipe(gasoline, tinyPlatinumDust, lpg, 900);
 		
+		// Cracking catalitico
+		ItemStack propylene = CraftingHelpers.getOreDict("Propylene Cell");
+		propylene.stackSize = 32;
+		diesel.stackSize = 32;
+		GregtechCompat.addChemicalRecipe(diesel, tinyPlatinumDust, propylene, 300);
+	
 		
 		// Wooden Pulp -> Pellet
 		ItemStack woodPulp = GregtechCompat.getGregTechItem(1, 8, 15);
@@ -205,6 +213,15 @@ public class CraftingHandler {
 		ItemStack hydroCell = ic2.api.Items.getItem("electrolyzedWaterCell").copy();
 		ItemStack ethylene = CraftingHelpers.getOreDict("Ethylene Cell").copy();
 		GregtechCompat.addChemicalRecipe(naphtha, hydroCell, ethylene, 300);
+		
+		// Etilene-Propilene
+		propylene.stackSize = 1;
+		ethylene.stackSize = 1;
+		ItemStack ethylenePropyleneMix = new ItemStack(Items.EthylenePropyleneMix);
+		ethylenePropyleneMix.stackSize = 2;
+		CraftingHelpers.addShapelessRecipe(new ItemStack(Items.EthylenePropyleneMix, 0, 2), new Object[] {ethylene, propylene});
+		
+		
 	
 		condensate.stackSize = 2;
 		GregtechCompat.addChemicalRecipe(condensate, hydroCell, ethylene, 300);
@@ -287,6 +304,61 @@ public class CraftingHandler {
 		nitrogen.stackSize = 45;
 		
 		GregtechCompat.addDistillationRecipe(air, 0, nitrogen, oxygen, argon, co2, 0, 0);
+		
+		//Solfato di ammonio
+		ItemStack ammoniumSulfate = new ItemStack(Items.AmmoniumSulfate); 
+		ItemStack ammoniumBisulfate = new ItemStack(Items.AmmoniumBisulfate);
+		ItemStack ammoniumPersulfate = new ItemStack(Items.AmmoniumPersulfate);
+		
+		h2so4Cell.stackSize = 1;
+		ammonia.stackSize = 2;
+		GregtechCompat.addChemicalRecipe(h2so4Cell, ammonia, ammoniumBisulfate, 60);
+		//bisolfato di ammonio da decomposizione
+		GameRegistry.addSmelting(ammoniumSulfate.itemID, ammoniumBisulfate, 0.1f);
+		//persolfato di ammonio da elettrolisi
+		GregtechCompat.addElectrolyzerRecipe(ammoniumBisulfate, 0, ammoniumPersulfate, null, null, null, 100, 400);
+		
+		//Acqua ossigenata
+		ItemStack h2o2 = CraftingHelpers.getOreDict("Hydrogen Peroxide Cell");
+		h2o2.stackSize = 1;
+		GregtechCompat.addChemicalRecipe(ammoniumPersulfate, ic2.api.Items.getItem("waterCell"), h2o2, 30);
+		
+		//HCl
+		chlorine.stackSize = 1;
+		hydrogen.stackSize = 1;
+		ItemStack hcl = CraftingHelpers.getOreDict("Hydrochloric Acid Cell");
+		GregtechCompat.addChemicalRecipe(chlorine, hydrogen, hcl, 3);
+		
+		//Titanium(III)Chloride
+		ItemStack titaniumIIIChloride = new ItemStack(Items.TitaniumIIIChloride);
+		ItemStack titanium = GregtechCompat.getGregTechItem(1, 2, 19);
+		hcl.stackSize = 6;
+		GregtechCompat.addChemicalRecipe(hcl, titanium, titaniumIIIChloride, 200);
+
+		
+		//PLASTICA
+		
+		//gomma EPR		
+		ItemStack epr = ic2.api.Items.getItem("rubber").copy();
+		epr.stackSize = 8;
+		ethylenePropyleneMix.stackSize = 64;
+		h2o2.stackSize = 1;
+		GregtechCompat.addChemicalRecipe(ethylenePropyleneMix, h2o2, epr, 60);
+		
+		
+		
+		//polietilene (HD)
+		Item peItem = BadModHandler.universalItemGetter("item.rawPlasticItem");
+		
+		if (peItem != null) {
+			ItemStack pe = new ItemStack(peItem);
+			ethylene.stackSize = 64;
+			titaniumIIIChloride.stackSize = 1;
+			pe.stackSize = 8;
+			GregtechCompat.addChemicalRecipe(ethylene, titaniumIIIChloride, pe, 100);
+		} else {
+			Main.oilgasLog.warning("Minefactory non trovata, quindi non è stato aggiunto il polietilene HDPE");
+		}
 		
 		//Gestione svuotamento celle	
 		cell.stackSize = 1;

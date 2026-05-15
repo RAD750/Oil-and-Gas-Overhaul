@@ -13,23 +13,35 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class Items {
 
 	//ITEMS
-	public static Item AlCl3, woodChips, woodPellets, paraffinedWood, hpPump, monammoniumPhosphate;
+	public static Item AlCl3, woodChips, woodPellets, paraffinedWood, hpPump, monammoniumPhosphate, EthylenePropyleneMix, AmmoniumSulfate, AmmoniumBisulfate, AmmoniumPersulfate, TitaniumIIIChloride;
 	
 	public static void initItems() {
-		AlCl3 = new ItemCatalyst(22000, 0, "AlCl3", 64, "AlCl₃");
+		AlCl3 = new ItemCatalyst(22000, 0, "AlCl3", 64, "\247bFormula: \247eAlCl₃");
 		woodChips = new ItemFuel(22010, 16, "woodChips", 64, 1700, null);
 		woodPellets = new ItemFuel(22011, 17, "woodPellets", 64, 500, null);
 		paraffinedWood = new ItemFuel(22012, 18, "paraffinedWood", 64, 12000, null);
 		monammoniumPhosphate = new ItemGeneric(22013, 48, "monammoniumPhosphate", 64, "\247bFormula: \247e(NH₄)(H₂PO₄)");
+		EthylenePropyleneMix = new ItemGeneric(22014, 49, "ethylenePropyleneMix", 64, "Gaseous Mixture");
+		AmmoniumSulfate = new ItemGeneric(22015, 50, "ammoniumSulfate", 64, "\247bFormula: \247e(NH₄)₂SO₄");
+		AmmoniumBisulfate = new ItemGeneric(22016, 50, "ammoniumBisulfate", 64, "\247bFormula: \247e(NH₄)HSO₄"); //stessa texture
+		AmmoniumPersulfate = new ItemGeneric(22017, 51, "ammoniumPersulfate", 64, "\247bFormula: \247e(NH₄)₂S₂O₈");
+		TitaniumIIIChloride = new ItemGeneric(22018, 52, "titaniumIIIChloride", 64,"\247bFormula: \247eTiCl₃");
+
 		OreDictionary.registerOre("monammoniumPhosphate", new ItemStack(Items.monammoniumPhosphate));
+
 	}
 
 	public static void initLanguageRegistry() {
-		LanguageRegistry.addName(AlCl3, "Aluminium Chloride (III)");
+		LanguageRegistry.addName(AlCl3, "Aluminium (III) Chloride");
 		LanguageRegistry.addName(woodChips, "Wood Chips");
 		LanguageRegistry.addName(woodPellets, "Wood Pellets");
 		LanguageRegistry.addName(paraffinedWood, "Paraffined Wood");
-		LanguageRegistry.addName(monammoniumPhosphate, "Monammonium Phosphate");
+		LanguageRegistry.addName(monammoniumPhosphate, "Monoammonium Phosphate");
+		LanguageRegistry.addName(EthylenePropyleneMix, "Ethylene-Propylene Mix");
+		LanguageRegistry.addName(AmmoniumSulfate, "Ammonium Sulfate");
+		LanguageRegistry.addName(AmmoniumBisulfate, "Ammonium Bisulfate");
+		LanguageRegistry.addName(AmmoniumPersulfate, "Ammonium Persulfate");
+		LanguageRegistry.addName(TitaniumIIIChloride, "Titanium (III) Chloride");
 	}
 }
 

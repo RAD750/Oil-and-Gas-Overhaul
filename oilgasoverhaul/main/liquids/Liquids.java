@@ -80,6 +80,9 @@ public class Liquids {
 		LiquidHelper.addLiquid("Propylene", 3823, 23, 21523, 23, "Alkene", "CH₃CH=CH₂", "Gas");
 		
 		//Hydrogen peroxide
-		LiquidHelper.addLiquid("Hydrogen peroxide", 3824, 24, 21524, 24, "Peroxide", "H₂O₂", "Liquid");
+		LiquidHelper.addLiquid("Hydrogen Peroxide", 3824, 24, 21524, 24, "Peroxide", "H₂O₂", "Liquid");
+		
+		//HCl
+		LiquidHelper.addLiquid("Hydrochloric Acid", 3825, 25, 21525, 25, "Acid", "HCl", "Liquid Solution");
 	}
 }

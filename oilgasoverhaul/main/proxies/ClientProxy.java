@@ -98,10 +98,11 @@ public class ClientProxy extends CommonProxy {
 		TextureFXHelper.defineTextureFX(153, 153, 250, 250, 235, 235, 23);
 		//Hydrogen peroxide
 		TextureFXHelper.defineTextureFX(176, 179, 200, 208, 250, 255, 24);
-		
+		//Acido cloridrico
+		TextureFXHelper.defineTextureFX(140, 150, 160, 170, 210, 240, 25);
 		
 		/*
-		 * Modeli 3D
+		 * Modelli 3D
 		 */
 		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWellhead.class, new RenderTableWellhead());
