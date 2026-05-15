@@ -312,7 +312,7 @@ public class CraftingHandler {
 		
 		h2so4Cell.stackSize = 1;
 		ammonia.stackSize = 2;
-		GregtechCompat.addChemicalRecipe(h2so4Cell, ammonia, ammoniumBisulfate, 60);
+		GregtechCompat.addChemicalRecipe(h2so4Cell, ammonia, ammoniumSulfate, 60);
 		//bisolfato di ammonio da decomposizione
 		GameRegistry.addSmelting(ammoniumSulfate.itemID, ammoniumBisulfate, 0.1f);
 		//persolfato di ammonio da elettrolisi
