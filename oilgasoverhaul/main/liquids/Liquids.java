@@ -44,7 +44,7 @@ public class Liquids {
 		LiquidHelper.addLiquid("Condensate", 3811, 11, 21511, 11, "Mixture", "Light Hydrocarbons", "Liquid");
 	
 	    //Ethylene
-		LiquidHelper.addLiquid("Ethylene", 3812, 12, 21512, 12, "Alkene", null, "Gas");
+		LiquidHelper.addLiquid("Ethylene", 3812, 12, 21512, 12, "Alkene", "C₂H₄", "Gas");
 		
 		//Ethyl sulfate
 		LiquidHelper.addLiquid("Ethyl Sulfate", 3813, 13, 21513, 13, "Ester", null, "Liquid");
@@ -52,7 +52,7 @@ public class Liquids {
 		//Ethanol
 		LiquidHelper.addLiquid("Ethanol", 3814, 14, 21514, 14, "Alcohol", null, "Liquid");
 				
-		//E80 Gas
+		//E85 Gas
 		LiquidHelper.addLiquid("E85 Gasoline", 3815, 15, 21515, 15, "Mixture", "85% Ethanol, Gasoline", "Liquid");
 		
 		//LNG
@@ -65,17 +65,21 @@ public class Liquids {
 		LiquidHelper.addLiquid("Town Gas", 3818, 18, 21518, 18, "Mixture", "CO, H₂, CH₄", "Gas");
 		
 		//H2PO4 condivide texture con Ammoniaca
-		LiquidHelper.addLiquid("Phosphoric Acid", 3819, 17, 21519, 17, "Acid", "H₂PO₄", "Liquid Solution");
+		LiquidHelper.addLiquid("Phosphoric Acid", 3819, 19, 21519, 19, "Acid", "H₂PO₄", "Liquid Solution");
 		
 		//CO2
-		LiquidHelper.addLiquid("Carbon Dioxide", 3820, 19, 21520, 19, "Gas", "CO₂", "Gas");
+		LiquidHelper.addLiquid("Carbon Dioxide", 3820, 20, 21520, 20, "Gas", "CO₂", "Gas");
 		
 		//Argon
-		LiquidHelper.addLiquid("Argon", 3821, 20, 21521, 20, "Noble Gas", "Ar", "Gas");
+		LiquidHelper.addLiquid("Argon", 3821, 21, 21521, 21, "Noble Gas", "Ar", "Gas");
 		
 		//SF6
-		LiquidHelper.addLiquid("Sulfur Hexafluoride", 3822, 21, 21522, 20, "Gas", "SF₆", "Gas");
+		LiquidHelper.addLiquid("Sulfur Hexafluoride", 3822, 22, 21522, 22, "Gas", "SF₆", "Gas");
 		
+	    //Propylene
+		LiquidHelper.addLiquid("Propylene", 3823, 23, 21523, 23, "Alkene", "CH₃CH=CH₂", "Gas");
 		
+		//Hydrogen peroxide
+		LiquidHelper.addLiquid("Hydrogen peroxide", 3824, 24, 21524, 24, "Peroxide", "H₂O₂", "Liquid");
 	}
 }
