@@ -100,7 +100,12 @@ public class ClientProxy extends CommonProxy {
 		TextureFXHelper.defineTextureFX(176, 179, 200, 208, 250, 255, 24);
 		//Acido cloridrico
 		TextureFXHelper.defineTextureFX(140, 150, 160, 170, 210, 240, 25);
-		
+		//Acido fluoridrico
+		TextureFXHelper.defineTextureFX(229, 235, 249, 255, 4, 8, 26);
+		//CHCl3
+		TextureFXHelper.defineTextureFX(140, 150, 160, 170, 210, 240, 27);
+		//TFE
+		TextureFXHelper.defineTextureFX(229, 235, 249, 255, 4, 8, 28);
 		/*
 		 * Modelli 3D
 		 */

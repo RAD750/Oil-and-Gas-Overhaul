@@ -13,7 +13,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class Items {
 
 	//ITEMS
-	public static Item AlCl3, woodChips, woodPellets, paraffinedWood, hpPump, monammoniumPhosphate, EthylenePropyleneMix, AmmoniumSulfate, AmmoniumBisulfate, AmmoniumPersulfate, TitaniumIIIChloride;
+	public static Item AlCl3, woodChips, woodPellets, paraffinedWood, hpPump, monammoniumPhosphate, EthylenePropyleneMix, AmmoniumSulfate, AmmoniumBisulfate, AmmoniumPersulfate, TitaniumIIIChloride, EmptyUncoatedCell;
 	
 	public static void initItems() {
 		AlCl3 = new ItemCatalyst(22000, 0, "AlCl3", 64, "\247bFormula: \247eAlCl₃");
@@ -26,6 +26,7 @@ public class Items {
 		AmmoniumBisulfate = new ItemGeneric(22016, 50, "ammoniumBisulfate", 64, "\247bFormula: \247e(NH₄)HSO₄"); //stessa texture
 		AmmoniumPersulfate = new ItemGeneric(22017, 51, "ammoniumPersulfate", 64, "\247bFormula: \247e(NH₄)₂S₂O₈");
 		TitaniumIIIChloride = new ItemGeneric(22018, 52, "titaniumIIIChloride", 64,"\247bFormula: \247eTiCl₃");
+		EmptyUncoatedCell = new ItemGeneric(22019, 32, "emptyUncoatedCell", 64, "\247bTo be coated with PTFE");
 
 		OreDictionary.registerOre("monammoniumPhosphate", new ItemStack(Items.monammoniumPhosphate));
 
@@ -42,6 +43,7 @@ public class Items {
 		LanguageRegistry.addName(AmmoniumBisulfate, "Ammonium Bisulfate");
 		LanguageRegistry.addName(AmmoniumPersulfate, "Ammonium Persulfate");
 		LanguageRegistry.addName(TitaniumIIIChloride, "Titanium (III) Chloride");
+		LanguageRegistry.addName(EmptyUncoatedCell, "Empty Uncoated Cell");
 	}
 }
 

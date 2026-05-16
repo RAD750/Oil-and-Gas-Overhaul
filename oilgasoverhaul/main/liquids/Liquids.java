@@ -84,5 +84,14 @@ public class Liquids {
 		
 		//HCl
 		LiquidHelper.addLiquid("Hydrochloric Acid", 3825, 25, 21525, 25, "Acid", "HCl", "Liquid Solution");
+		
+		//HF
+		LiquidHelper.addLiquid("Hydrofluoric Acid", 3826, 26, 21526, 26, "Acid", "HF", "Liquid Solution");
+		
+		//CHCl3
+		LiquidHelper.addLiquid("Chloroform", 3826, 26, 21526, 26, "Acid", "CHCl₃", "Liquid");
+		
+		//Tetrafluoroethylene
+		LiquidHelper.addLiquid("Tetrafluoroethylene", 3827, 27, 21527, 27, "Alkene", "C₂F₄", "Gas");
 	}
 }

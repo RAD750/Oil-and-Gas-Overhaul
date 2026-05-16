@@ -188,6 +188,7 @@ public class CraftingOverrides {
 		removeSmeltingMetaRecipe(rubber);
 		removeSmeltingMetaRecipe("itemRubber");
 		removeExtractorRecipe(rubber);
+		removeRecipe(ic2.api.Items.getItem("cell"));
 		//levare smelting per MineFactory
 		Item rawPlastic = BadModHandler.universalItemGetter("item.rawPlasticItem");
 		if (rawPlastic != null) {

@@ -335,6 +335,37 @@ public class CraftingHandler {
 		hcl.stackSize = 6;
 		GregtechCompat.addChemicalRecipe(hcl, titanium, titaniumIIIChloride, 200);
 
+		//acido idrofluorico
+		ItemStack fluorite = CraftingHelpers.getOreDict("gemFluorite");
+		ItemStack hf = CraftingHelpers.getOreDict("Hydrofluoric Acid Cell");
+		fluorite.stackSize = 1;
+		hf.stackSize = 2;
+		h2so4Cell.stackSize = 1;
+		GregtechCompat.addChemicalRecipe(fluorite, h2so4Cell, hf, 90);
+		
+		//cloroformio
+		ItemStack methane = CraftingHelpers.getOreDict("molecule_1me");
+		ItemStack chloroform = CraftingHelpers.getOreDict("Chloroform Cell");
+		chlorine.stackSize = 1;
+		methane.stackSize = 1;
+		GregtechCompat.addChemicalRecipe(chlorine, methane, chloroform, 300);
+		
+		//Tetrafloroetilene
+		ItemStack tfe = CraftingHelpers.getOreDict("Tetrafluoroethylene Cell");
+		hf.stackSize = 2;
+		GregtechCompat.addChemicalRecipe(hf, chloroform, tfe, 200);
+		
+		//celle inox
+		ItemStack thinInoxPlate = CraftingHelpers.getOreDict("be_Thin Inox Plate");
+		ItemStack emptyUncoatedCell = new ItemStack(Items.EmptyUncoatedCell);
+		emptyUncoatedCell.stackSize = 16;
+		GregtechCompat.addBenderRecipe(thinInoxPlate, emptyUncoatedCell, 40, 20);
+		
+		//celle rivestite
+		cell.stackSize = 64;
+		emptyUncoatedCell.stackSize = 64;
+		tfe.stackSize = 1;
+		GregtechCompat.addChemicalRecipe(emptyUncoatedCell, tfe, cell, 80);
 		
 		//PLASTICA
 		
