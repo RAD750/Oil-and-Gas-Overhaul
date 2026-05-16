@@ -26,7 +26,7 @@ public class Items {
 		AmmoniumBisulfate = new ItemGeneric(22016, 50, "ammoniumBisulfate", 64, "\247bFormula: \247e(NH₄)HSO₄"); //stessa texture
 		AmmoniumPersulfate = new ItemGeneric(22017, 51, "ammoniumPersulfate", 64, "\247bFormula: \247e(NH₄)₂S₂O₈");
 		TitaniumIIIChloride = new ItemGeneric(22018, 52, "titaniumIIIChloride", 64,"\247bFormula: \247eTiCl₃");
-		EmptyUncoatedCell = new ItemGeneric(22019, 32, "emptyUncoatedCell", 64, "\247bTo be coated with PTFE");
+		EmptyUncoatedCell = new ItemGeneric(22019, 33, "emptyUncoatedCell", 64, "\247bTo be coated with PTFE");
 
 		OreDictionary.registerOre("monammoniumPhosphate", new ItemStack(Items.monammoniumPhosphate));
 
