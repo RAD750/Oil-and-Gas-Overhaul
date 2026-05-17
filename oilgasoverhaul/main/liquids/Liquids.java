@@ -93,5 +93,32 @@ public class Liquids {
 		
 		//Tetrafluoroethylene
 		LiquidHelper.addLiquid("Tetrafluoroethylene", 3828, 28, 21528, 28, "Alkene", "C₂F₄", "Gas");
+		
+		//Benzene
+		LiquidHelper.addLiquid("Benzene", 3829, 29, 21529, 29, "Aromatic hydrocarbon", "C₆H₆", "Liquid");
+		
+		//Toluene
+		LiquidHelper.addLiquid("Toluene", 3830, 30, 21530, 30, "Aromatic hydrocarbon", "C₆H₅CH₃", "Liquid");
+		
+		//Xylene
+		LiquidHelper.addLiquid("Xylene", 3831, 31, 21531, 31, "Aromatic hydrocarbon", "(CH₃)C₆H₄", "Liquid");
+		
+		//Pygas (reformate)
+		LiquidHelper.addLiquid("Reformate", 3832, 32, 21532, 32, "Light hydrocarbons mixture", "Benzene, Toluene, Xylene", "Liquid");
+		
+		//Ethylbenzene
+		LiquidHelper.addLiquid("Ethylbenzene", 3833, 33, 21533, 33, "Aromatic hydrocarbon", "C₈H₁₀", "Liquid");
+		
+		//Styrene
+		LiquidHelper.addLiquid("Styrene", 3834, 34, 21534, 34, "Aromatic hydrocarbon", "C₈H₈", "Liquid");
+		
+		//Terephtalic acid
+		LiquidHelper.addLiquid("Terephthalic Acid", 3825, 35, 21535, 35, "Acid", "C₈H₆O₄", "Liquid Solution");
+		
+		//Ethylene glycol
+		LiquidHelper.addLiquid("Ethylene Glycol", 3826, 36, 21536, 36, "Glycol (diol)", "C₂H₆O₂", "Liquid");
+		
+		//Ethylene oxide
+		LiquidHelper.addLiquid("Ethylene Oxide", 3827, 37, 21537, 37, "Cyclic ether (epoxide)", "C₂H₄O", "Liquid");
 	}
 }

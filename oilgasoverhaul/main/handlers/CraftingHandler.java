@@ -219,7 +219,7 @@ public class CraftingHandler {
 		ethylene.stackSize = 1;
 		ItemStack ethylenePropyleneMix = new ItemStack(Items.EthylenePropyleneMix);
 		ethylenePropyleneMix.stackSize = 2;
-		CraftingHelpers.addShapelessRecipe(new ItemStack(Items.EthylenePropyleneMix, 0, 2), new Object[] {ethylene, propylene});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.EthylenePropyleneMix, 0, 2), new Object[] {ethylene, propylene});
 		
 		
 	
@@ -300,7 +300,40 @@ public class CraftingHandler {
 		ItemStack co2 = CraftingHelpers.getOreDict("Carbon Dioxide Cell");
 		co2.stackSize = 1;
 		
+		//reformato da nafta
+		ItemStack reformate = CraftingHelpers.getOreDict("Reformate Cell");
+		naphtha.stackSize = 10;
+		reformate.stackSize = 10;
+		hydrogen.stackSize = 1;
+		GregtechCompat.addChemicalRecipe(naphtha, hydrogen, reformate, 50);
 		
+		//btx (Pyrolysis Gasoline)
+		
+		ItemStack toluene = CraftingHelpers.getOreDict("Toluene Cell");
+		ItemStack benzene = CraftingHelpers.getOreDict("Benzene Cell");
+		ItemStack xylene = CraftingHelpers.getOreDict("Xylene Cell");
+		benzene.stackSize = 5;
+		toluene.stackSize = 3;
+		xylene.stackSize = 2;
+		reformate.stackSize = 10;
+		
+		GregtechCompat.addDistillationRecipe(reformate, 0, xylene, toluene, benzene, null, 200, 384);
+		
+		
+		//etilbenzene
+		ItemStack ethylbenzene = CraftingHelpers.getOreDict("Ethylbenzene Cell");
+		benzene.stackSize = 1;
+		ethylene.stackSize = 1;
+		ethylbenzene.stackSize = 1;
+		GregtechCompat.addChemicalRecipe(benzene, ethylene, ethylbenzene, 60);
+		
+		//stirene
+		ItemStack styrene = CraftingHelpers.getOreDict("Styrene Cell");
+		styrene.stackSize = 64;
+		ethylbenzene.stackSize = 64;
+		ItemStack ironDust = GregtechCompat.getGregTechItem(1, 1, 241);
+		GregtechCompat.addChemicalRecipe(ethylbenzene, ironDust, styrene, 90);
+				
 		nitrogen.stackSize = 45;
 		
 		GregtechCompat.addDistillationRecipe(air, 0, nitrogen, oxygen, argon, co2, 0, 0);
@@ -322,6 +355,23 @@ public class CraftingHandler {
 		ItemStack h2o2 = CraftingHelpers.getOreDict("Hydrogen Peroxide Cell");
 		h2o2.stackSize = 1;
 		GregtechCompat.addChemicalRecipe(ammoniumPersulfate, ic2.api.Items.getItem("waterCell"), h2o2, 30);
+		
+		//ossido di etilene
+		ItemStack ethyleneOxide = CraftingHelpers.getOreDict("Ethylene Oxide Cell");
+		oxygen.stackSize = 1;
+		GregtechCompat.addChemicalRecipe(ethyleneOxide, oxygen, ethyleneOxide, 10);
+		
+		//glicole etilenico
+		ItemStack waterCell = ic2.api.Items.getItem("waterCell");
+		ItemStack ethyleneGlycol = CraftingHelpers.getOreDict("Ethylene Glycol Cell");
+		GregtechCompat.addChemicalRecipe(ethyleneOxide, waterCell, ethyleneGlycol, 90);
+		
+		//Terephthalic acid
+		ItemStack terephthalicAcid = CraftingHelpers.getOreDict("Terephthalic Acid Cell");
+		ItemStack tinyManganeseDust = GregtechCompat.getGregTechItem(4, 1, 12);
+		xylene.stackSize = 64;
+		terephthalicAcid.stackSize = 64;
+		GregtechCompat.addChemicalRecipe(xylene, tinyManganeseDust, terephthalicAcid, 20);
 		
 		//HCl
 		chlorine.stackSize = 1;
@@ -390,6 +440,24 @@ public class CraftingHandler {
 		} else {
 			Main.oilgasLog.warning("Minefactory non trovata, quindi non è stato aggiunto il polietilene HDPE");
 		}
+		
+		//polistirene
+		ItemStack rawPolystyrene = new ItemStack(Items.rawPolystyrene);
+		ItemStack polystyreneSheet = new ItemStack(Items.polystyreneSheet);
+		rawPolystyrene.stackSize = 32;
+		styrene.stackSize = 64;
+		h2o2.stackSize = 16;
+		GregtechCompat.addChemicalRecipe(styrene, h2o2, rawPolystyrene, 120);
+		rawPolystyrene.stackSize = 1;
+		GregtechCompat.addBenderRecipe(rawPolystyrene, polystyreneSheet, 50, 160);
+		
+		//PET
+		ItemStack rawPET = new ItemStack(Items.rawPET);
+		ItemStack petSheet = new ItemStack (Items.petSheet);
+		terephthalicAcid.stackSize = 1;
+		ethyleneGlycol.stackSize = 1;
+		GregtechCompat.addChemicalRecipe(terephthalicAcid, ethyleneGlycol, rawPET, 90);
+		GregtechCompat.addBenderRecipe(rawPET, petSheet, 90, 160);
 		
 		//Gestione svuotamento celle	
 		cell.stackSize = 1;

@@ -13,7 +13,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class Items {
 
 	//ITEMS
-	public static Item AlCl3, woodChips, woodPellets, paraffinedWood, hpPump, monammoniumPhosphate, EthylenePropyleneMix, AmmoniumSulfate, AmmoniumBisulfate, AmmoniumPersulfate, TitaniumIIIChloride, EmptyUncoatedCell;
+	public static Item AlCl3, woodChips, woodPellets, paraffinedWood, hpPump, monammoniumPhosphate, EthylenePropyleneMix, AmmoniumSulfate, AmmoniumBisulfate, AmmoniumPersulfate, TitaniumIIIChloride, EmptyUncoatedCell, rawPolystyrene, polystyreneSheet, rawPET, petSheet;
 	
 	public static void initItems() {
 		AlCl3 = new ItemCatalyst(22000, 0, "AlCl3", 64, "\247bFormula: \247eAlCl₃");
@@ -27,8 +27,14 @@ public class Items {
 		AmmoniumPersulfate = new ItemGeneric(22017, 51, "ammoniumPersulfate", 64, "\247bFormula: \247e(NH₄)₂S₂O₈");
 		TitaniumIIIChloride = new ItemGeneric(22018, 52, "titaniumIIIChloride", 64,"\247bFormula: \247eTiCl₃");
 		EmptyUncoatedCell = new ItemGeneric(22019, 33, "emptyUncoatedCell", 64, "\247bTo be coated with PTFE");
-
+		rawPolystyrene = new ItemGeneric(22820, 69, "rawPolystyrene", 64, "Plastic resin");
+		polystyreneSheet = new ItemGeneric(22821, 133, "polystyreneSheet", 64, "Formed plastic resin");
+		rawPET = new ItemGeneric(22822, 68, "rawPET", 64, "Plastic resin");
+		petSheet = new ItemGeneric(22823, 132, "petSheet", 64, "Plastic resin");
+		
 		OreDictionary.registerOre("monammoniumPhosphate", new ItemStack(Items.monammoniumPhosphate));
+		OreDictionary.registerOre("rawPolystyrene", new ItemStack(Items.rawPolystyrene));
+		OreDictionary.registerOre("polystyreneSheet", new ItemStack(Items.polystyreneSheet));
 
 	}
 
@@ -44,6 +50,10 @@ public class Items {
 		LanguageRegistry.addName(AmmoniumPersulfate, "Ammonium Persulfate");
 		LanguageRegistry.addName(TitaniumIIIChloride, "Titanium (III) Chloride");
 		LanguageRegistry.addName(EmptyUncoatedCell, "Empty Uncoated Cell");
+		LanguageRegistry.addName(rawPolystyrene, "Raw Polystyrene");
+		LanguageRegistry.addName(polystyreneSheet, "Polystyrene Sheet");
+		LanguageRegistry.addName(rawPET, "Raw PET");
+		LanguageRegistry.addName(petSheet, "PET Sheet");
 	}
 }
 
