@@ -2,9 +2,11 @@ package oilgasoverhaul.main.handlers;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.lwjgl.opengl.AMDDepthClampSeparate;
 
@@ -460,6 +462,7 @@ public class CraftingHandler {
 		GregtechCompat.addBenderRecipe(rawPET, petSheet, 90, 160);
 		
 		//Gestione svuotamento celle	
+		
 		cell.stackSize = 1;
 		lpg.stackSize = 1;
 		gasoline.stackSize = 1;
@@ -481,6 +484,21 @@ public class CraftingHandler {
 		h2po4.stackSize = 1;
 		argon.stackSize = 1;
 		co2.stackSize = 1;
+		//sf6.stackSize = 1;
+		propylene.stackSize = 1;
+		h2o2.stackSize = 1;
+		hcl.stackSize = 1;
+		hf.stackSize = 1;
+		chloroform.stackSize = 1;
+		tfe.stackSize = 1;
+		benzene.stackSize = 1;
+		toluene.stackSize = 1;
+		reformate.stackSize = 1;
+		ethylbenzene.stackSize = 1;
+		styrene.stackSize = 1;
+		terephthalicAcid.stackSize = 1;
+		ethyleneGlycol.stackSize = 1;
+		ethyleneOxide.stackSize = 1;
 		
 		ic2.api.Ic2Recipes.addExtractorRecipe(lpg, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(gasoline, cell);
@@ -502,6 +520,20 @@ public class CraftingHandler {
 		ic2.api.Ic2Recipes.addExtractorRecipe(h2po4, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(argon, cell);
 		ic2.api.Ic2Recipes.addExtractorRecipe(co2, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(propylene, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(h2o2, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(hcl, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(hf, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(chloroform, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(tfe, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(benzene, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(toluene, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(reformate, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(ethylbenzene, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(styrene, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(terephthalicAcid, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(ethyleneGlycol, cell);
+		ic2.api.Ic2Recipes.addExtractorRecipe(ethyleneOxide, cell);
 
 	}
 }
