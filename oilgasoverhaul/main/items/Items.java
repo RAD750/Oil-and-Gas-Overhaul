@@ -28,13 +28,15 @@ public class Items {
 		TitaniumIIIChloride = new ItemGeneric(22018, 52, "titaniumIIIChloride", 64,"\247bFormula: \247eTiCl₃");
 		EmptyUncoatedCell = new ItemGeneric(22019, 33, "emptyUncoatedCell", 64, "\247bTo be coated with PTFE");
 		rawPolystyrene = new ItemGeneric(22820, 69, "rawPolystyrene", 64, "Plastic resin");
-		polystyreneSheet = new ItemGeneric(22821, 133, "polystyreneSheet", 64, "Formed plastic resin");
+		polystyreneSheet = new ItemGeneric(22821, 85, "polystyreneSheet", 64, "Formed plastic resin");
 		rawPET = new ItemGeneric(22822, 68, "rawPET", 64, "Plastic resin");
-		petSheet = new ItemGeneric(22823, 132, "petSheet", 64, "Plastic resin");
+		petSheet = new ItemGeneric(22823, 84, "petSheet", 64, "Plastic resin");
 		
 		OreDictionary.registerOre("monammoniumPhosphate", new ItemStack(Items.monammoniumPhosphate));
-		OreDictionary.registerOre("rawPolystyrene", new ItemStack(Items.rawPolystyrene));
-		OreDictionary.registerOre("polystyreneSheet", new ItemStack(Items.polystyreneSheet));
+		OreDictionary.registerOre("polymer_ps_raw", new ItemStack(Items.rawPolystyrene));
+		OreDictionary.registerOre("polymer_ps_sheet", new ItemStack(Items.polystyreneSheet));
+		OreDictionary.registerOre("polymer_pet_raw", new ItemStack(Items.rawPET));
+		OreDictionary.registerOre("polymer_pet_sheet", new ItemStack(Items.petSheet));
 
 	}
 
