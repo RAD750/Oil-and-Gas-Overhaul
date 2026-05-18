@@ -41,6 +41,8 @@ public class CraftingHandler {
 		 * TIPO: 0. Lingotti 1. Polveri 2. Celle 3. Parti misc. 4. Tiny pile
 		 */
 		
+	
+		
 		// Desalificazione
 		ItemStack desaltedCrude = CraftingHelpers.getOreDict("Desalted Crude Cell").copy();
 		GregtechCompat.addChemicalRecipe(GregtechCompat.getGregTechItem(2, 1, 17), ic2.api.Items.getItem("waterCell"), desaltedCrude, 120);
@@ -154,6 +156,7 @@ public class CraftingHandler {
 		ItemStack aluminiumChloride = new ItemStack(Items.AlCl3);
 		GregtechCompat.addChemicalRecipe(aluminiumDust, chlorine, aluminiumChloride, 400);
 		
+
 		
 		//Benzina in tanica
 		ItemStack cell = ic2.api.Items.getItem("cell").copy();
@@ -276,6 +279,17 @@ public class CraftingHandler {
 		GameRegistry.addShapedRecipe(new ItemStack(Blocks.lngHeater, 1), new Object[] {
 				" I ", "VBV", " F ", 'I', new ItemStack(Item.ingotIron), 'V', valve, 'F', liquidFirebox, 'B', lpBoiler
 		});
+		
+		//Cloro da elettrolisi
+		Item saltWaterItem = BadModHandler.universalItemGetter("item.canister");
+		if (saltWaterItem != null) {
+			ItemStack saltWater = new ItemStack(saltWaterItem, 0, 5);
+			hydrogen.stackSize = 1;
+			chlorine.stackSize = 1;
+			GregtechCompat.addElectrolyzerRecipe(saltWater, 1, hydrogen, chlorine, null, null, 60, 1024);
+		} else {
+			Main.oilgasLog.warning("Useless additions non trovata quindi non è stata aggiunta l'elettrolisi dell'acqua salata");
+		}
 				
 		
 		ItemStack h2po4 = CraftingHelpers.getOreDict("Phosphoric Acid Cell").copy();
