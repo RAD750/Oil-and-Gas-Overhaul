@@ -378,7 +378,7 @@ public class CraftingHandler {
 		//ossido di etilene
 		ItemStack ethyleneOxide = CraftingHelpers.getOreDict("Ethylene Oxide Cell");
 		oxygen.stackSize = 1;
-		GregtechCompat.addChemicalRecipe(ethyleneOxide, oxygen, ethyleneOxide, 10);
+		GregtechCompat.addChemicalRecipe(ethylene, oxygen, ethyleneOxide, 10);
 		
 		//glicole etilenico
 		ItemStack waterCell = ic2.api.Items.getItem("waterCell");
