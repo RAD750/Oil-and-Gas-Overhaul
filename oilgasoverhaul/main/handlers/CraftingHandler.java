@@ -282,15 +282,18 @@ public class CraftingHandler {
 		
 		//Cloro da elettrolisi
 		Item saltWaterItem = BadModHandler.universalItemGetter("item.canister");
+		ItemStack brine = new ItemStack(Items.brine);
 		if (saltWaterItem != null) {
 			ItemStack saltWater = new ItemStack(saltWaterItem, 0, 5);
-			hydrogen.stackSize = 1;
-			chlorine.stackSize = 1;
-			GregtechCompat.addElectrolyzerRecipe(saltWater, 1, hydrogen, chlorine, null, null, 60, 1024);
+			GameRegistry.addShapelessRecipe(brine, new Object[] {saltWater});
 		} else {
 			Main.oilgasLog.warning("Useless additions non trovata quindi non è stata aggiunta l'elettrolisi dell'acqua salata");
 		}
 				
+	
+		hydrogen.stackSize = 1;
+		chlorine.stackSize = 1;
+		GregtechCompat.addElectrolyzerRecipe(brine, 1, hydrogen, chlorine, null, null, 60, 1024);
 		
 		ItemStack h2po4 = CraftingHelpers.getOreDict("Phosphoric Acid Cell").copy();
 		ItemStack phosphorus = GregtechCompat.getGregTechItem(1, 1, 45);
