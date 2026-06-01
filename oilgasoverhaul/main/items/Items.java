@@ -50,6 +50,8 @@ public class Items {
 		OreDictionary.registerOre("polymer_ps_sheet", new ItemStack(Items.polystyreneSheet));
 		OreDictionary.registerOre("polymer_pet_raw", new ItemStack(Items.rawPET));
 		OreDictionary.registerOre("polymer_pet_sheet", new ItemStack(Items.petSheet));
+		OreDictionary.registerOre("polymer_pvc_raw", new ItemStack(Items.rawPVC));
+		OreDictionary.registerOre("polymer_pvc_sheet", new ItemStack(Items.pvcSheet));
 		OreDictionary.registerOre("cellBrine", new ItemStack(Items.brine));
 		OreDictionary.registerOre("cellVCM", new ItemStack(Items.vcm));
 
