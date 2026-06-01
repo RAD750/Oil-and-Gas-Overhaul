@@ -118,6 +118,19 @@ public class ClientProxy extends CommonProxy {
 		TextureFXHelper.defineTextureFX(215, 233, 180, 210, 25, 45, 33);
 		// Styrene
 		TextureFXHelper.defineTextureFX(251, 252, 252, 255, 232, 235, 34);
+		//TFE
+		TextureFXHelper.defineTextureFX(251, 254, 240, 246, 210, 214, 35);
+		//glicole etilenico
+		TextureFXHelper.defineTextureFX(251, 254, 240, 246, 210, 214, 36);
+		//ossido di etilene
+		TextureFXHelper.defineTextureFX(251, 254, 240, 246, 210, 214, 37);
+		//cicloesano
+		TextureFXHelper.defineTextureFX(251, 254, 240, 246, 210, 214, 38);
+		//cicloesanone
+		TextureFXHelper.defineTextureFX(251, 254, 240, 246, 210, 214, 39);
+		
+		
+		
 		
 		/*
 		 * Modelli 3D

@@ -287,7 +287,7 @@ public class CraftingHandler {
 			ItemStack saltWater = new ItemStack(saltWaterItem, 0, 5);
 			GameRegistry.addShapelessRecipe(brine, new Object[] {saltWater});
 		} else {
-			Main.oilgasLog.warning("Useless additions non trovata quindi non è stata aggiunta l'elettrolisi dell'acqua salata");
+			Main.oilgasLog.warning("Useless additions non trovata quindi non è stata aggiunta la conversione in brine dell'acqua salata");
 		}
 				
 	
@@ -477,6 +477,37 @@ public class CraftingHandler {
 		ethyleneGlycol.stackSize = 1;
 		GregtechCompat.addChemicalRecipe(terephthalicAcid, ethyleneGlycol, rawPET, 90);
 		GregtechCompat.addBenderRecipe(rawPET, petSheet, 90, 160);
+		
+		//Nylon-6
+		benzene.stackSize = 64;
+		ItemStack tinyNickel = GregtechCompat.getGregTechItem(4, 28, 1);
+		ItemStack cyclohexane = CraftingHelpers.getOreDict("Cyclohexane Cell");
+		cyclohexane.stackSize = 64;
+		GregtechCompat.addChemicalRecipe(benzene, tinyNickel, cyclohexane, 20);
+		
+		ItemStack tinyAluminium = GregtechCompat.getGregTechItem(4, 18, 1);
+		ItemStack cyclohexanone = CraftingHelpers.getOreDict("Cyclohexanone Cell");
+		cyclohexanone.stackSize = 64;
+		GregtechCompat.addChemicalRecipe(cyclohexane, tinyAluminium, cyclohexanone, 20);
+		cyclohexanone.stackSize = 8;
+		ammonia.stackSize = 1;
+		ItemStack caprolactam = new ItemStack(Items.caprolactam);
+		caprolactam.stackSize = 8;
+		GregtechCompat.addChemicalRecipe(cyclohexanone, ammonia, caprolactam, 20);
+		ItemStack pa6fiber = new ItemStack(Items.pa6Fiber);
+		GregtechCompat.addWiremillRecipe(caprolactam, pa6fiber, 50, 220);
+		
+		//PVC
+		
+		ItemStack vcm = new ItemStack(Items.vcm);
+		ItemStack acetylene = CraftingHelpers.getOreDict("cellAcetylene");
+		GregtechCompat.addChemicalRecipe(acetylene, hcl, vcm, 90);
+		waterCell.stackSize = 1;
+		ItemStack rawPVC = new ItemStack(Items.rawPVC);
+		ItemStack pvcSheet = new ItemStack(Items.pvcSheet);
+		GregtechCompat.addChemicalRecipe(vcm, waterCell, rawPVC, 90);
+		GregtechCompat.addBenderRecipe(rawPVC, pvcSheet, 90, 160);
+	
 		
 		//Gestione svuotamento celle	
 		
