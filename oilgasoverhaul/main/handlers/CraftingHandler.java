@@ -502,6 +502,8 @@ public class CraftingHandler {
 		
 		ItemStack vcm = new ItemStack(Items.vcm);
 		ItemStack acetylene = CraftingHelpers.getOreDict("cellAcetylene");
+		hcl.stackSize = 1;
+		vcm.stackSize = 4;
 		GregtechCompat.addChemicalRecipe(acetylene, hcl, vcm, 90);
 		waterCell.stackSize = 1;
 		ItemStack rawPVC = new ItemStack(Items.rawPVC);
