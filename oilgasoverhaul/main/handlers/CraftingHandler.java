@@ -495,6 +495,7 @@ public class CraftingHandler {
 		caprolactam.stackSize = 8;
 		GregtechCompat.addChemicalRecipe(cyclohexanone, ammonia, caprolactam, 20);
 		ItemStack pa6fiber = new ItemStack(Items.pa6Fiber);
+		caprolactam.stackSize = 1;
 		GregtechCompat.addWiremillRecipe(caprolactam, pa6fiber, 50, 220);
 		
 		//PVC
