@@ -24,13 +24,13 @@ public class Blocks {
 		
 		
 		//slab
-		ogoSlab = (BlockHalfSlab) new BlockOGOSlab(2101, true).setBlockName("ogoSlab");
-		ogoSingleSlab = (BlockHalfSlab) new BlockOGOSlab(2102, false).setBlockName("ogoSingleSlab");
+		ogoSlab = (BlockHalfSlab) new BlockOGOSlab(2102, true).setBlockName("ogoSlab");
+		ogoSingleSlab = (BlockHalfSlab) new BlockOGOSlab(2103, false).setBlockName("ogoSingleSlab");
 		Item.itemsList[ogoSingleSlab.blockID] = (new ItemCustomSlab(ogoSingleSlab.blockID - 256, ogoSingleSlab, ogoSlab, false)).setItemName("ogoSlab");
 		Item.itemsList[ogoSlab.blockID] = (new ItemCustomSlab(ogoSlab.blockID - 256, ogoSingleSlab, ogoSlab, true)).setItemName("ogoSlab");
 		
 		//scale
-		asphaltStairs = new BlockCustomStairs(2103, Blocks.asphalt, 0, "asphaltStairs");
+		asphaltStairs = new BlockCustomStairs(2104, Blocks.asphalt, 0, "asphaltStairs");
 		
 		wellHead = new BlockWellhead(2200, 1, Material.iron, "wellHead", 0.8f);
 		barrel55gal = new BlockBarrel55gal(2201, 2, Material.iron, "barrel55gal", 0.8f);
