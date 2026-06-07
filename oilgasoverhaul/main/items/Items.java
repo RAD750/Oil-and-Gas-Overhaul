@@ -13,9 +13,12 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class Items {
 
 	//ITEMS
-	public static Item AlCl3, woodChips, woodPellets, paraffinedWood, hpPump, monammoniumPhosphate, EthylenePropyleneMix, AmmoniumSulfate, AmmoniumBisulfate, AmmoniumPersulfate, TitaniumIIIChloride, EmptyUncoatedCell, rawPolystyrene, polystyreneSheet, rawPET, petSheet;
+	public static Item brine, AlCl3, woodChips, woodPellets, paraffinedWood, hpPump, monammoniumPhosphate, EthylenePropyleneMix, AmmoniumSulfate, AmmoniumBisulfate, AmmoniumPersulfate, TitaniumIIIChloride, EmptyUncoatedCell;
+	public static Item rawPolystyrene, polystyreneSheet, rawPET, petSheet;
+	public static Item caprolactam, pa6Fiber, rawPC, vcm, rawPVC, pvcSheet, pcSheet, pvcPipe, pa6Pipe;
 	
 	public static void initItems() {
+		
 		AlCl3 = new ItemCatalyst(22000, 0, "AlCl3", 64, "\247bFormula: \247eAlCl₃");
 		woodChips = new ItemFuel(22010, 16, "woodChips", 64, 1700, null);
 		woodPellets = new ItemFuel(22011, 17, "woodPellets", 64, 500, null);
@@ -27,16 +30,30 @@ public class Items {
 		AmmoniumPersulfate = new ItemGeneric(22017, 51, "ammoniumPersulfate", 64, "\247bFormula: \247e(NH₄)₂S₂O₈");
 		TitaniumIIIChloride = new ItemGeneric(22018, 52, "titaniumIIIChloride", 64,"\247bFormula: \247eTiCl₃");
 		EmptyUncoatedCell = new ItemGeneric(22019, 33, "emptyUncoatedCell", 64, "\247bTo be coated with PTFE");
+		brine = new ItemGeneric(22020, 34, "brineCell", 64, "\247bFormula: \247eH₂O + NaCl");
+		caprolactam = new ItemGeneric(22021, 53, "caprolactam", 64, "\247bFormula: \247e(CH₂)₅C(O)NH₈");
+		vcm = new ItemGeneric(22022, 35, "vcmCell", 64, "\247bFormula: \247eH₂C=CHCl");
+		
+		
 		rawPolystyrene = new ItemGeneric(22820, 69, "rawPolystyrene", 64, "Plastic resin");
 		polystyreneSheet = new ItemGeneric(22821, 85, "polystyreneSheet", 64, "Formed plastic resin");
 		rawPET = new ItemGeneric(22822, 68, "rawPET", 64, "Plastic resin");
 		petSheet = new ItemGeneric(22823, 84, "petSheet", 64, "Plastic resin");
+		pa6Fiber = new ItemGeneric(22824, 66, "pa6Fiber", 64, "Plastic fiber");
+		rawPVC = new ItemGeneric(22825, 67, "rawPVC", 64, "Plastic resin");
+		pvcSheet = new ItemGeneric(22826, 83, "pvcSheet", 64, "Formed plastic resin");
+		
 		
 		OreDictionary.registerOre("monammoniumPhosphate", new ItemStack(Items.monammoniumPhosphate));
+		OreDictionary.registerOre("polymer_pa6_fiber", new ItemStack(Items.pa6Fiber));
 		OreDictionary.registerOre("polymer_ps_raw", new ItemStack(Items.rawPolystyrene));
 		OreDictionary.registerOre("polymer_ps_sheet", new ItemStack(Items.polystyreneSheet));
 		OreDictionary.registerOre("polymer_pet_raw", new ItemStack(Items.rawPET));
 		OreDictionary.registerOre("polymer_pet_sheet", new ItemStack(Items.petSheet));
+		OreDictionary.registerOre("polymer_pvc_raw", new ItemStack(Items.rawPVC));
+		OreDictionary.registerOre("polymer_pvc_sheet", new ItemStack(Items.pvcSheet));
+		OreDictionary.registerOre("cellBrine", new ItemStack(Items.brine));
+		OreDictionary.registerOre("cellVCM", new ItemStack(Items.vcm));
 
 	}
 
@@ -56,6 +73,12 @@ public class Items {
 		LanguageRegistry.addName(polystyreneSheet, "Polystyrene Sheet");
 		LanguageRegistry.addName(rawPET, "Raw PET");
 		LanguageRegistry.addName(petSheet, "PET Sheet");
+		LanguageRegistry.addName(brine, "Brine Cell");
+		LanguageRegistry.addName(caprolactam, "Caprolactam");
+		LanguageRegistry.addName(vcm, "Vinyl Chloride Monomer");
+		LanguageRegistry.addName(pa6Fiber, "PA6 Fiber (Nylon®-6)");
+		LanguageRegistry.addName(rawPVC, "Raw PVC");
+		LanguageRegistry.addName(pvcSheet, "PVC Sheet");
 	}
 }
 

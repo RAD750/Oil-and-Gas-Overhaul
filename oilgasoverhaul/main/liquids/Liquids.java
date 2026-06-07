@@ -120,5 +120,12 @@ public class Liquids {
 		
 		//Ethylene oxide
 		LiquidHelper.addLiquid("Ethylene Oxide", 3827, 37, 21537, 37, "Cyclic ether (epoxide)", "C₂H₄O", "Liquid");
+		
+		//Cyclohexane
+		LiquidHelper.addLiquid("Cyclohexane", 3828, 38, 21538, 38, "Cyclic alkane", "C₆H₁₂", "Liquid");
+		
+		//Cyclohexanone
+		LiquidHelper.addLiquid("Cyclohexanone", 3829, 39, 21539, 39, "Cyclic ketone", "(CH₂)₅CO", "Liquid");
+		
 	}
 }
