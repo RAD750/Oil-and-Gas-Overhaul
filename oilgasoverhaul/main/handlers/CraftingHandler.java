@@ -148,7 +148,11 @@ public class CraftingHandler {
 		asphalt.stackSize = 1;
 		gravel.stackSize = 32;
 		GregtechCompat.addAlloySmelterRecipe(gravel, asphalt, asphaltBlock, 500, 40);
-	
+		
+		asphaltBlock.stackSize = 1;
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.ogoSingleSlab, 6, 0), new Object [] {"###", "   ", "   ", '#', asphaltBlock});	
+		GameRegistry.addShapedRecipe(new ItemStack(Blocks.asphaltStairs, 4), new Object [] {"  #", " ##", "###", '#', asphaltBlock});
+		
 		//AlCl3
 		
 		ItemStack aluminiumDust = GregtechCompat.getGregTechItem(1, 0, 18);
@@ -511,6 +515,7 @@ public class CraftingHandler {
 		GregtechCompat.addChemicalRecipe(vcm, waterCell, rawPVC, 90);
 		GregtechCompat.addBenderRecipe(rawPVC, pvcSheet, 90, 160);
 	
+		
 		
 		//Gestione svuotamento celle	
 		

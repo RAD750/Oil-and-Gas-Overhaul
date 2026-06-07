@@ -3,7 +3,11 @@ package oilgasoverhaul.main.blocks;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import oilgasoverhaul.main.items.ItemCustomSlab;
 public class Blocks {
 
 	public static Block asphalt;
@@ -12,14 +16,28 @@ public class Blocks {
 	public static Block frackingHead;
 	public static Block lngAbsorptionChiller;
 	public static Block lngHeater;
+	public static BlockHalfSlab ogoSlab, ogoSingleSlab;
+	public static Block asphaltStairs;
 	
 	public static void initBlocks() {
 		asphalt = new GenericBlock(2100, 0, Material.rock, "asphaltBlock", 0.8f);
+		
+		
+		//slab
+		ogoSlab = (BlockHalfSlab) new BlockOGOSlab(2101, true).setBlockName("ogoSlab");
+		ogoSingleSlab = (BlockHalfSlab) new BlockOGOSlab(2102, false).setBlockName("ogoSingleSlab");
+		Item.itemsList[ogoSingleSlab.blockID] = (new ItemCustomSlab(ogoSingleSlab.blockID - 256, ogoSingleSlab, ogoSlab, false)).setItemName("ogoSlab");
+		Item.itemsList[ogoSlab.blockID] = (new ItemCustomSlab(ogoSlab.blockID - 256, ogoSingleSlab, ogoSlab, true)).setItemName("ogoSlab");
+		
+		//scale
+		asphaltStairs = new BlockCustomStairs(2103, Blocks.asphalt, 0, "asphaltStairs");
+		
 		wellHead = new BlockWellhead(2200, 1, Material.iron, "wellHead", 0.8f);
 		barrel55gal = new BlockBarrel55gal(2201, 2, Material.iron, "barrel55gal", 0.8f);
 		frackingHead = new BlockFrackingHead(2202, 3, Material.iron, "frackingHead", 2.0f);
 		lngAbsorptionChiller = new BlockLNGAbsorptionChiller(2203, 4, Material.iron, "lngAbsorptionChiller", 2.0f);
 		lngHeater = new BlockLNGHeater(2204, 5, Material.iron, "lngHeater", 2.0f);
+		
 	}
 	
 	public static void registerBlocks() {
@@ -29,7 +47,7 @@ public class Blocks {
 		GameRegistry.registerBlock(frackingHead, "frackingHead");
 		GameRegistry.registerBlock(lngAbsorptionChiller, "lngAbsorptionChiller");
 		GameRegistry.registerBlock(lngHeater, "lngHeater");
-
+		GameRegistry.registerBlock(asphaltStairs, "asphaltStairs");
 	}
 	
 	public static void initLanguageRegistry() {
@@ -39,6 +57,8 @@ public class Blocks {
 		LanguageRegistry.addName(frackingHead, "Fracking Head");
 		LanguageRegistry.addName(lngAbsorptionChiller, "LNG Absorption Chiller");
 		LanguageRegistry.addName(lngHeater, "LNG Heater");
-
+		LanguageRegistry.addName(new ItemStack(Blocks.ogoSlab,  0, 0), "Asphalt Slab");
+	    LanguageRegistry.addName(new ItemStack(Blocks.ogoSlab,  0, 0), "Asphalt Slab");
+	    LanguageRegistry.addName(asphaltStairs, "Asphalt Stairs");
 	}
 }
